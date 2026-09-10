@@ -1,0 +1,36 @@
+:root {
+  /* Brand Color Palette from design-reference.png */
+  --bg-primary: #FBF8F3;
+  --bg-secondary: #F4EFE6;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FCFAF6;
+  --bg-dark: #1E1610;
+  
+  --text-primary: #2C1F17;
+  --text-secondary: #5A4A3E;
+  --text-muted: #8C7B6E;
+  --text-light: #FBF8F3;
+  
+  --accent-gold: #C5A059;
+  --accent-gold-light: #F4ECE0;
+  --accent-warm: #A85A32;
+  
+  --border-color: #E8E0D5;
+  --border-color-light: #F2ECDF;
+  --border-dark: #3D2D22;
+  
+  --shadow-subtle: 0 4px 20px rgba(44, 31, 23, 0.04);
+  --shadow-card: 0 10px 30px rgba(44, 31, 23, 0.06);
+  --shadow-hover: 0 20px 40px rgba(44, 31, 23, 0.1);
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  --font-family: 'IBM Plex Sans Arabic', system-ui, -apple-system, sans-serif;
+  
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}

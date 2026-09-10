@@ -1,0 +1,141 @@
+import React from 'react';
+import { VideoItem } from '../../data/videos';
+import { Play } from 'lucide-react';
+
+interface VideoCardProps {
+  video: VideoItem;
+  onClick: (video: VideoItem) => void;
+}
+
+export const VideoCard: React.FC<VideoCardProps> = ({ video, onClick }) => {
+  return (
+    <div
+      onClick={() => onClick(video)}
+      style={{
+        backgroundColor: 'var(--bg-card)',
+        borderRadius: 'var(--radius-md)',
+        border: '1px solid var(--border-color)',
+        overflow: 'hidden',
+        cursor: 'pointer',
+        boxShadow: 'var(--shadow-subtle)',
+        transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+        display: 'flex',
+        flexDirection: 'column'
+      }}
+      className="video-card"
+    >
+      {/* Thumbnail Container */}
+      <div style={{ position: 'relative', aspectRatio: '16/9', overflow: 'hidden', backgroundColor: '#1E1610' }}>
+        <img
+          src={video.thumbnail}
+          alt={video.title}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            transition: 'transform 0.5s ease'
+          }}
+          className="thumbnail-img"
+        />
+
+        {/* Dark Gradient Overlay */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%)'
+          }}
+        />
+
+        {/* Play Icon Badge */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
+        >
+          <div
+            style={{
+              width: '46px',
+              height: '46px',
+              borderRadius: '50%',
+              backgroundColor: 'rgba(251, 248, 243, 0.92)',
+              color: 'var(--text-primary)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
+              transition: 'transform 0.25s ease'
+            }}
+            className="play-badge"
+          >
+            <Play size={20} style={{ marginLeft: '2px' }} fill="currentColor" />
+          </div>
+        </div>
+
+        {/* Duration Badge */}
+        <div
+          style={{
+            position: 'absolute',
+            bottom: '8px',
+            right: '8px',
+            padding: '3px 8px',
+            borderRadius: '4px',
+            backgroundColor: 'rgba(0,0,0,0.75)',
+            color: '#FFFFFF',
+            fontSize: '0.75rem',
+            fontWeight: 600
+          }}
+        >
+          {video.duration}
+        </div>
+
+        {/* Category Pill */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '8px',
+            right: '8px',
+            padding: '3px 10px',
+            borderRadius: 'var(--radius-full)',
+            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            color: 'var(--text-primary)',
+            fontSize: '0.72rem',
+            fontWeight: 700
+          }}
+        >
+          {video.category}
+        </div>
+      </div>
+
+      {/* Info Container */}
+      <div style={{ padding: '1rem 1.2rem', display: 'flex', flexDirection: 'column', gap: '0.3rem', flex: 1 }}>
+        <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--accent-warm)' }}>
+          {video.brandName}
+        </div>
+        <h4 style={{ fontSize: '0.98rem', fontWeight: 700, color: 'var(--text-primary)', lineHeight: 1.4 }}>
+          {video.title}
+        </h4>
+      </div>
+
+      <style>{`
+        .video-card:hover {
+          transform: translateY(-4px);
+          box-shadow: var(--shadow-hover);
+          border-color: var(--text-muted);
+        }
+        .video-card:hover .thumbnail-img {
+          transform: scale(1.05);
+        }
+        .video-card:hover .play-badge {
+          transform: scale(1.15);
+          background-color: var(--text-primary);
+          color: var(--bg-primary);
+        }
+      `}</style>
+    </div>
+  );
+};
