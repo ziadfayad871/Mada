@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
           {/* Col 1: Logo & Agency Bio */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             <MadaLogo variant="light" size="md" />
-            <p style={{ fontSize: '0.9rem', color: '#B5A596', leading: 1.7, maxWidth: '320px' }}>
+            <p style={{ fontSize: '0.9rem', color: '#B5A596', lineHeight: 1.7, maxWidth: '320px' }}>
               وكالة تسويق رقمي متخصصة في تقديم حلول متكاملة تساعد العلامات التجارية على الوصول إلى جمهورها وتحقيق نتائج ملموسة.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', marginTop: '0.5rem' }}>
