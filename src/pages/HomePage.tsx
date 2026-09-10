@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Play, Sparkles } from 'lucide-react';
+import { ArrowLeft, Play } from 'lucide-react';
 import { SERVICES } from '../data/services';
 import { BRANDS } from '../data/brands';
 import { VIDEOS, VideoItem } from '../data/videos';
@@ -22,71 +22,80 @@ export const HomePage: React.FC = () => {
   return (
     <div>
       {/* ==================================================
-          1. HERO SECTION (Stunning Mobile & Desktop Layout)
+          1. HERO SECTION (Mirroring design-reference.png Screen 1)
       ================================================== */}
       <section
         style={{
           position: 'relative',
-          paddingTop: '2rem',
-          paddingBottom: '3.5rem',
+          paddingTop: '2.5rem',
+          paddingBottom: '4rem',
           overflow: 'hidden',
           backgroundColor: 'var(--bg-primary)'
         }}
       >
+        {/* Subtle Decorative Leaf Watermark in Background matching reference */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '240px',
+            height: '240px',
+            opacity: 0.12,
+            pointerEvents: 'none',
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 80 Q 50 10 90 80 Q 50 90 10 80 Z' fill='%2%232C1F17' /%3E%3C/svg%3E")`,
+            backgroundRepeat: 'no-repeat'
+          }}
+        />
+
         <div className="container">
-          <div className="hero-grid-container">
-            {/* Hero Copy Column */}
-            <div className="hero-copy-col">
+          <div className="hero-grid">
+            {/* Right Column in RTL: Copy & Headlines */}
+            <div className="hero-copy">
               <div className="badge-pill" style={{ width: 'fit-content' }}>
                 <span className="badge-pill-dot" />
                 <span>وكالة تسويق رقمية وإنتائج محتوى</span>
               </div>
 
-              <h1 className="hero-headline">
+              <h1 className="hero-title">
                 نحول أفكارك إلى قصص <span style={{ color: 'var(--accent-warm)' }}>تترك أثراً</span>
               </h1>
 
-              <p className="hero-description">
+              <p className="hero-subtext">
                 نقدم حلولاً تسويقية متكاملة تجمع بين الإبداع، التقنية، والإنتائج المرئي لنصنع لك حضوراً قوياً في عالم المنافسة.
               </p>
 
-              <div className="hero-cta-group">
-                <Link to="/works" className="btn-primary" style={{ padding: '0.85rem 1.8rem' }}>
+              <div className="hero-actions">
+                <Link to="/works" className="btn-primary">
                   <span>اكتشف أعمالنا</span>
                   <ArrowLeft size={18} />
                 </Link>
 
-                <Link to="/contact" className="btn-secondary" style={{ padding: '0.85rem 1.8rem' }}>
+                <Link to="/contact" className="btn-secondary">
                   <span>تواصل معنا</span>
                 </Link>
               </div>
             </div>
 
-            {/* Hero Center Visual: Camera Photography Container */}
-            <div className="hero-camera-container">
+            {/* Center Column: Camera on Tripod Photography (Matching design-reference.png screen 1) */}
+            <div className="hero-camera-card">
               <img
-                src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1000&q=80"
-                alt="MADA Studio Camera Production"
-                className="hero-camera-img"
+                src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80"
+                alt="MADA Studio Camera on Tripod"
+                className="hero-camera-photo"
               />
 
-              {/* Gradient Overlay */}
-              <div
-                style={{
-                  position: 'absolute',
-                  inset: 0,
-                  background: 'linear-gradient(to top, rgba(44, 31, 23, 0.5) 0%, rgba(0,0,0,0) 65%)'
-                }}
-              />
+              {/* Warm Studio Gradient Overlay */}
+              <div className="hero-camera-overlay" />
 
-              {/* Calligraphic Badge Tag */}
-              <div className="hero-camera-badge">
+              {/* Arabic Calligraphic Overlay Text */}
+              <div className="hero-camera-calligraphy">
                 أفكار · محتوى · تسويق · إبداع
               </div>
             </div>
 
-            {/* Hero Brand Showcase Card */}
-            <div className="hero-brand-card">
+            {/* Left Column in RTL: "بعض من عملائنا" Card */}
+            <div className="hero-brands-card">
               <div>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.2rem' }}>
                   بعض من عملائنا
@@ -96,22 +105,22 @@ export const HomePage: React.FC = () => {
                 </p>
               </div>
 
-              {/* Brands Grid */}
+              {/* 2x3 Grid of Brand Logos */}
               <div className="hero-brands-grid">
                 {BRANDS.slice(0, 5).map((b) => (
                   <Link
                     key={b.id}
                     to={`/brands/${b.slug}`}
-                    className="hero-brand-box"
+                    className="hero-brand-item"
                   >
-                    <BrandLogoImage brandId={b.id} name={b.name} size={38} />
+                    <BrandLogoImage brandId={b.id} name={b.name} size={36} />
                   </Link>
                 ))}
 
                 {/* "+ and more..." Box */}
                 <Link
                   to="/brands"
-                  className="hero-brand-box hero-more-box"
+                  className="hero-brand-item hero-brand-more"
                 >
                   <span style={{ fontSize: '1.1rem', lineHeight: 1 }}>+</span>
                   <span>and more...</span>
@@ -138,65 +147,77 @@ export const HomePage: React.FC = () => {
         </div>
 
         <style>{`
-          .hero-grid-container {
+          .hero-grid {
             display: grid;
-            grid-template-columns: minmax(300px, 1fr) 1.1fr minmax(280px, 0.9fr);
+            grid-template-columns: 1fr 1.15fr 0.9fr;
             gap: 2rem;
             align-items: center;
           }
-          .hero-copy-col {
+          .hero-copy {
             display: flex;
             flex-direction: column;
             gap: 1.25rem;
           }
-          .hero-headline {
+          .hero-title {
             font-size: clamp(2.2rem, 4vw, 3.2rem);
             font-weight: 800;
             color: var(--text-primary);
-            line-height: 1.2;
+            line-height: 1.25;
             letter-spacing: -0.02em;
           }
-          .hero-description {
+          .hero-subtext {
             font-size: 1.05rem;
             color: var(--text-secondary);
             line-height: 1.7;
             max-width: 440px;
           }
-          .hero-cta-group {
+          .hero-actions {
             display: flex;
             align-items: center;
             gap: 1rem;
             margin-top: 0.5rem;
             flex-wrap: wrap;
           }
-          .hero-camera-container {
+          .hero-camera-card {
             position: relative;
             border-radius: var(--radius-xl);
             overflow: hidden;
             box-shadow: var(--shadow-hover);
             border: 1px solid var(--border-color);
             aspect-ratio: 4/5;
-            max-height: 480px;
+            min-height: 440px;
             background-color: var(--bg-secondary);
             width: 100%;
           }
-          .hero-camera-img {
+          .hero-camera-photo {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center 25%;
+            transition: transform 0.6s ease;
           }
-          .hero-camera-badge {
+          .hero-camera-card:hover .hero-camera-photo {
+            transform: scale(1.04);
+          }
+          .hero-camera-overlay {
             position: absolute;
-            bottom: 1.5rem;
-            left: 1.5rem;
+            inset: 0;
+            background: linear-gradient(to top, rgba(44, 31, 23, 0.45) 0%, rgba(0,0,0,0) 65%);
+            pointer-events: none;
+          }
+          .hero-camera-calligraphy {
+            position: absolute;
+            bottom: 1.75rem;
+            left: 1.75rem;
             color: rgba(255, 255, 255, 0.95);
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             font-weight: 600;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.12em;
             writing-mode: vertical-rl;
             text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
           }
-          .hero-brand-card {
+          .hero-brands-card {
             background-color: var(--bg-card);
             border-radius: var(--radius-lg);
             padding: 1.8rem 1.5rem;
@@ -211,22 +232,24 @@ export const HomePage: React.FC = () => {
             grid-template-columns: repeat(2, 1fr);
             gap: 0.85rem;
           }
-          .hero-brand-box {
+          .hero-brand-item {
             background-color: var(--bg-primary);
             border-radius: var(--radius-sm);
-            padding: 0.85rem 0.5rem;
+            padding: 0.9rem 0.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
             border: 1px solid var(--border-color-light);
-            transition: transform 0.2s, border-color 0.2s;
+            transition: all 0.25s ease;
             text-decoration: none;
           }
-          .hero-brand-box:hover {
-            transform: translateY(-2px);
+          .hero-brand-item:hover {
+            transform: translateY(-3px);
             border-color: var(--text-primary);
+            box-shadow: var(--shadow-subtle);
+            background-color: var(--bg-card);
           }
-          .hero-more-box {
+          .hero-brand-more {
             background-color: var(--bg-secondary);
             border: 1px dashed var(--border-color);
             color: var(--text-secondary);
@@ -235,30 +258,28 @@ export const HomePage: React.FC = () => {
             flex-direction: column;
           }
 
-          /* Responsive Styles for Tablet & Mobile */
+          /* Responsive Breakpoints for Tablet & Mobile */
           @media (max-width: 1024px) {
-            .hero-grid-container {
+            .hero-grid {
               grid-template-columns: 1fr;
-              gap: 2.5rem;
+              gap: 2.25rem;
             }
-            .hero-camera-container {
-              aspect-ratio: 16/10;
-              max-height: 400px;
-              order: 2;
-            }
-            .hero-copy-col {
+            .hero-copy {
               order: 1;
             }
-            .hero-brand-card {
+            .hero-camera-card {
+              order: 2;
+              aspect-ratio: 16/10;
+              min-height: 300px;
+              max-height: 420px;
+            }
+            .hero-brands-card {
               order: 3;
             }
-            .hero-camera-badge {
+            .hero-camera-calligraphy {
               writing-mode: horizontal-tb;
               left: 1.25rem;
               bottom: 1.25rem;
-            }
-            .hero-headline {
-              font-size: clamp(1.8rem, 6vw, 2.5rem);
             }
             .hero-brands-grid {
               grid-template-columns: repeat(3, 1fr);
@@ -266,18 +287,19 @@ export const HomePage: React.FC = () => {
           }
 
           @media (max-width: 600px) {
-            .hero-camera-container {
-              aspect-ratio: 4/3;
-              max-height: 280px;
+            .hero-camera-card {
+              aspect-ratio: 16/10;
+              min-height: 240px;
+              max-height: 320px;
               border-radius: var(--radius-lg);
             }
             .hero-brands-grid {
               grid-template-columns: repeat(2, 1fr);
             }
-            .hero-cta-group {
+            .hero-actions {
               width: 100%;
             }
-            .hero-cta-group a {
+            .hero-actions a {
               width: 100%;
               justify-content: center;
             }
@@ -286,7 +308,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ==================================================
-          2. QUICK SERVICES STRIP
+          2. QUICK SERVICES STRIP (Matching Screen 5)
       ================================================== */}
       <section style={{ backgroundColor: 'var(--bg-secondary)', padding: '3.5rem 0' }}>
         <div className="container">
@@ -295,7 +317,7 @@ export const HomePage: React.FC = () => {
               <span className="badge-pill-dot" />
               <span>خدمات متكاملة</span>
             </div>
-            <h2 style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)', fontWeight: 700, color: 'var(--text-primary)', marginTop: '0.75rem' }}>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 4vw, 2.2rem)', fontWeight: 700, color: 'var(--text-primary)', marginTop: '0.75rem' }}>
               حلول تسويقية تصنع الفارق
             </h2>
           </div>
@@ -303,7 +325,7 @@ export const HomePage: React.FC = () => {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(210px, 1fr))',
               gap: '1.25rem'
             }}
           >
@@ -313,7 +335,7 @@ export const HomePage: React.FC = () => {
           </div>
 
           <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-            <Link to="/services" className="btn-secondary" style={{ fontSize: '0.88rem' }}>
+            <Link to="/services" className="btn-secondary">
               <span>اكتشف جميع الخدمات</span>
               <ArrowLeft size={16} />
             </Link>
@@ -322,7 +344,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ==================================================
-          3. ABOUT SECTION TEASER
+          3. ABOUT SECTION TEASER (Matching Screen 6)
       ================================================== */}
       <section className="section-padding" style={{ backgroundColor: 'var(--bg-primary)' }}>
         <div className="container">
@@ -330,7 +352,7 @@ export const HomePage: React.FC = () => {
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '3rem',
+              gap: '3.5rem',
               alignItems: 'center'
             }}
           >
@@ -362,8 +384,8 @@ export const HomePage: React.FC = () => {
               >
                 <div
                   style={{
-                    width: '60px',
-                    height: '60px',
+                    width: '64px',
+                    height: '64px',
                     borderRadius: '50%',
                     backgroundColor: 'rgba(251, 248, 243, 0.95)',
                     color: 'var(--text-primary)',
@@ -378,7 +400,7 @@ export const HomePage: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Text Content */}
+            {/* Right Text Content in RTL */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
               <div className="badge-pill" style={{ width: 'fit-content' }}>
                 <span className="badge-pill-dot" />
@@ -389,33 +411,33 @@ export const HomePage: React.FC = () => {
                 من نحن
               </h2>
 
-              <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
+              <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
                 مدى هي وكالة تسويق رقمي متخصصة في تقديم حلول متكاملة تساعد العلامات التجارية على الوصول إلى جمهورها وتحقيق نتائج ملموسة من خلال استراتيجيات إبداعية ومحتوى احترافي وحملات إعلانية فعالة.
               </p>
 
-              {/* Quick stats numbers */}
+              {/* Quick stats numbers matching reference screen 6 */}
               <div
                 style={{
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '1.5rem',
+                  gap: '2rem',
                   paddingTop: '1rem',
                   borderTop: '1px solid var(--border-color)',
                   flexWrap: 'wrap'
                 }}
               >
                 <div>
-                  <div style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--text-primary)' }}>+50</div>
+                  <div style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--text-primary)' }}>+50</div>
                   <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>مشروع ناجح</div>
                 </div>
 
                 <div>
-                  <div style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--text-primary)' }}>+120</div>
+                  <div style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--text-primary)' }}>+120</div>
                   <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>محتوى إبداعي</div>
                 </div>
 
                 <div>
-                  <div style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--text-primary)' }}>+8</div>
+                  <div style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--text-primary)' }}>+8</div>
                   <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>سنوات خبرة</div>
                 </div>
               </div>
@@ -444,7 +466,7 @@ export const HomePage: React.FC = () => {
             <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.4rem)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.8rem' }}>
               أعمالنا وشركاؤنا
             </h2>
-            <p style={{ fontSize: '1rem', color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto' }}>
+            <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto' }}>
               اضغط على أي براند لاستكشاف الحملات والفيديوهات المخصصة له.
             </p>
           </div>
@@ -452,8 +474,8 @@ export const HomePage: React.FC = () => {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-              gap: '1.25rem'
+              gridTemplateColumns: 'repeat(auto-fill, minmax(210px, 1fr))',
+              gap: '1.5rem'
             }}
           >
             {BRANDS.slice(0, 5).map((b) => (
@@ -471,7 +493,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ==================================================
-          5. 21 CAMPAIGN VIDEOS TEASER SHOWCASE
+          5. 21 CAMPAIGN VIDEOS SHOWCASE
       ================================================== */}
       <section className="section-padding" style={{ backgroundColor: 'var(--bg-primary)' }}>
         <div className="container">
@@ -480,7 +502,7 @@ export const HomePage: React.FC = () => {
               display: 'flex',
               alignItems: 'flex-end',
               justifyContent: 'space-between',
-              marginBottom: '2.5rem',
+              marginBottom: '3rem',
               flexWrap: 'wrap',
               gap: '1.5rem'
             }}
@@ -493,7 +515,7 @@ export const HomePage: React.FC = () => {
               <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.4rem)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
                 21 فيديو احترافي
               </h2>
-              <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', maxWidth: '520px' }}>
+              <p style={{ fontSize: '1rem', color: 'var(--text-muted)', maxWidth: '520px' }}>
                 مجموعة من الأعمال الإبداعية التي تعكس خبرتنا في صناعة المحتوى والإنتاج للعلامات التجارية.
               </p>
             </div>
@@ -507,8 +529,8 @@ export const HomePage: React.FC = () => {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
-              gap: '1.5rem'
+              gridTemplateColumns: 'repeat(auto-fill, minmax(270px, 1fr))',
+              gap: '1.8rem'
             }}
           >
             {featuredVideos.map((vid) => (
@@ -536,8 +558,8 @@ export const HomePage: React.FC = () => {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-              gap: '1.25rem'
+              gridTemplateColumns: 'repeat(auto-fill, minmax(210px, 1fr))',
+              gap: '1.5rem'
             }}
           >
             {ACHIEVEMENTS.map((ach) => (
