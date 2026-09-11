@@ -17,26 +17,54 @@ export const WorksPage: React.FC = () => {
     : VIDEOS.filter((v) => v.category === selectedCategory);
 
   return (
-    <div style={{ backgroundColor: 'var(--bg-primary)', padding: '4.5rem 0', minHeight: '100vh' }}>
+    <div style={{ 
+      backgroundColor: 'var(--bg-primary)', 
+      padding: '4.5rem 0 5rem', 
+      minHeight: '100vh' 
+    }}>
       <div className="container">
         {/* Page Header */}
-        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: '4.5rem' }}>
           <div className="badge-pill" style={{ marginBottom: '1rem' }}>
             <span className="badge-pill-dot" />
             <span>معرض الإنتاج والإبداع</span>
           </div>
-          <h1 style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '0.8rem' }}>
+          <h1 style={{ 
+            fontSize: 'clamp(2.2rem, 5vw, 3.2rem)', 
+            fontWeight: 800, 
+            color: 'var(--text-primary)', 
+            marginBottom: '1rem',
+            letterSpacing: '-0.02em'
+          }}>
             أعمالنا
           </h1>
-          <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', maxWidth: '620px', margin: '0 auto' }}>
-            مجموعة متكاملة من المشاريع، الحملات، والإنتاج المرئي الذي نفذته مدى للعلامات التجارية الطموحة.
+          <p style={{ 
+            fontSize: '1.15rem', 
+            color: 'var(--text-secondary)', 
+            maxWidth: '680px', 
+            margin: '0 auto',
+            lineHeight: 1.75
+          }}>
+            مجموعة متكاملة من المشاريع، الحملات، والإنتاج المرئي الذي نفذته مدى للعلامات التجارية الطموحة والرائدة.
           </p>
         </div>
 
         {/* Section 1: العلامات التجارية */}
         <div style={{ marginBottom: '5rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '2rem' }}>
-            <h2 style={{ fontSize: '1.8rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'space-between', 
+            marginBottom: '2rem',
+            flexWrap: 'wrap',
+            gap: '1rem'
+          }}>
+            <h2 style={{ 
+              fontSize: 'clamp(1.5rem, 3vw, 1.9rem)', 
+              fontWeight: 700, 
+              color: 'var(--text-primary)',
+              margin: 0
+            }}>
               العلامات التجارية
             </h2>
             <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
@@ -51,7 +79,7 @@ export const WorksPage: React.FC = () => {
               gap: '1.25rem'
             }}
           >
-            {BRANDS.slice(0, 5).map((b) => (
+            {BRANDS.slice(0, 6).map((b) => (
               <BrandCard key={b.id} brand={b} compact />
             ))}
           </div>
@@ -64,17 +92,22 @@ export const WorksPage: React.FC = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              marginBottom: '2rem',
+              marginBottom: '2.5rem',
               flexWrap: 'wrap',
               gap: '1.5rem'
             }}
           >
             <div>
-              <h2 style={{ fontSize: '1.8rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.3rem' }}>
-                21 فيديو احترافي
+              <h2 style={{ 
+                fontSize: 'clamp(1.5rem, 3vw, 1.9rem)', 
+                fontWeight: 700, 
+                color: 'var(--text-primary)', 
+                marginBottom: '0.4rem' 
+              }}>
+                {VIDEOS.length} فيديو احترافي
               </h2>
               <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
-                عرض {filteredVideos.length} من أصل 21 فيديو
+                عرض {filteredVideos.length} من أصل {VIDEOS.length} فيديو
               </span>
             </div>
 

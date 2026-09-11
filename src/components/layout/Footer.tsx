@@ -28,17 +28,18 @@ export const Footer: React.FC = () => {
           {/* Col 1: Logo & Agency Bio */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             <MadaLogo variant="light" size="md" />
-            <p style={{ fontSize: '0.9rem', color: '#B5A596', lineHeight: 1.7, maxWidth: '320px' }}>
-              وكالة تسويق رقمي متخصصة في تقديم حلول متكاملة تساعد العلامات التجارية على الوصول إلى جمهورها وتحقيق نتائج ملموسة.
+            <p style={{ fontSize: '0.95rem', color: '#B5A596', lineHeight: 1.75, maxWidth: '340px' }}>
+              وكالة تسويق رقمي وإنتاج محتوى متخصصة في تقديم حلول متكاملة تساعد العلامات التجارية على تحقيق أهدافها ونتائج ملموسة.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', marginTop: '0.5rem' }}>
               <a
                 href="https://instagram.com/madamarking1"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Instagram"
                 style={{
-                  width: '38px',
-                  height: '38px',
+                  width: '40px',
+                  height: '40px',
                   borderRadius: '50%',
                   backgroundColor: 'rgba(255, 255, 255, 0.08)',
                   display: 'flex',
@@ -47,25 +48,29 @@ export const Footer: React.FC = () => {
                   color: '#E8DFD5',
                   transition: 'all 0.2s ease'
                 }}
+                className="social-link"
               >
-                <Instagram size={18} />
+                <Instagram size={19} />
               </a>
               <a
                 href="https://tiktok.com/@madamarking1"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="TikTok"
                 style={{
-                  width: '38px',
-                  height: '38px',
+                  width: '40px',
+                  height: '40px',
                   borderRadius: '50%',
                   backgroundColor: 'rgba(255, 255, 255, 0.08)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   color: '#E8DFD5',
-                  fontSize: '0.85rem',
-                  fontWeight: 700
+                  fontSize: '0.7rem',
+                  fontWeight: 700,
+                  transition: 'all 0.2s ease'
                 }}
+                className="social-link"
               >
                 TikTok
               </a>
@@ -77,13 +82,13 @@ export const Footer: React.FC = () => {
             <h4 style={{ color: '#FBF8F3', fontSize: '1.1rem', fontWeight: 600, marginBottom: '1.25rem' }}>
               روابط سريعة
             </h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.92rem' }}>
-              <li><Link to="/" style={{ color: '#B5A596', transition: 'color 0.2s' }}>الرئيسية</Link></li>
-              <li><Link to="/about" style={{ color: '#B5A596', transition: 'color 0.2s' }}>من نحن</Link></li>
-              <li><Link to="/services" style={{ color: '#B5A596', transition: 'color 0.2s' }}>خدماتنا</Link></li>
-              <li><Link to="/works" style={{ color: '#B5A596', transition: 'color 0.2s' }}>أعمالنا</Link></li>
-              <li><Link to="/team" style={{ color: '#B5A596', transition: 'color 0.2s' }}>فريق العمل</Link></li>
-              <li><Link to="/contact" style={{ color: '#B5A596', transition: 'color 0.2s' }}>تواصل معنا</Link></li>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.92rem', padding: 0, margin: 0 }}>
+              <li><Link to="/" style={{ color: '#B5A596', transition: 'color 0.2s' }} className="footer-link">الرئيسية</Link></li>
+              <li><Link to="/about" style={{ color: '#B5A596', transition: 'color 0.2s' }} className="footer-link">من نحن</Link></li>
+              <li><Link to="/services" style={{ color: '#B5A596', transition: 'color 0.2s' }} className="footer-link">خدماتنا</Link></li>
+              <li><Link to="/works" style={{ color: '#B5A596', transition: 'color 0.2s' }} className="footer-link">أعمالنا</Link></li>
+              <li><Link to="/brands" style={{ color: '#B5A596', transition: 'color 0.2s' }} className="footer-link">العلامات التجارية</Link></li>
+              <li><Link to="/contact" style={{ color: '#B5A596', transition: 'color 0.2s' }} className="footer-link">تواصل معنا</Link></li>
             </ul>
           </div>
 
@@ -92,12 +97,12 @@ export const Footer: React.FC = () => {
             <h4 style={{ color: '#FBF8F3', fontSize: '1.1rem', fontWeight: 600, marginBottom: '1.25rem' }}>
               خدماتنا الرئيسية
             </h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.92rem', color: '#B5A596' }}>
-              <li>التصميم الجرافيكي</li>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.92rem', color: '#B5A596', padding: 0, margin: 0 }}>
+              <li>التصميم الجرافيكي والإبداعي</li>
               <li>التصوير والإنتاج المرئي</li>
               <li>صناعة المحتوى الإبداعي</li>
               <li>إدارة حسابات التواصل الاجتماعي</li>
-              <li>إدارة الحملات الإعلانية المدفوعة</li>
+              <li>إدارة الحملات الإعلانية</li>
             </ul>
           </div>
 
@@ -106,17 +111,17 @@ export const Footer: React.FC = () => {
             <h4 style={{ color: '#FBF8F3', fontSize: '1.1rem', fontWeight: 600, marginBottom: '1.25rem' }}>
               تواصل معنا
             </h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', fontSize: '0.9rem', color: '#B5A596' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                <Phone size={16} color="var(--accent-gold)" />
-                <span>055 750 3280 / 053 113 4919</span>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem', fontSize: '0.9rem', color: '#B5A596' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                <Phone size={17} color="var(--accent-gold)" />
+                <span style={{ direction: 'ltr' }}>055 750 3280 / 053 113 4919</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                <Mail size={16} color="var(--accent-gold)" />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                <Mail size={17} color="var(--accent-gold)" />
                 <span>madamarking@gmail.com</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                <MapPin size={16} color="var(--accent-gold)" />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                <MapPin size={17} color="var(--accent-gold)" />
                 <span>الرياض، المملكة العربية السعودية</span>
               </div>
             </div>
@@ -137,13 +142,23 @@ export const Footer: React.FC = () => {
           }}
         >
           <div>
-            جميع الحقوق محفوظة © {new Date().getFullYear()} وكالة مدى للتسويق الرقمي MADA
+            جميع الحقوق محفوظة © {new Date().getFullYear()} وكالة مدى للتسويق الرقمي
           </div>
           <div>
             تصميم وتطوير هادئ وفاخر للعلامات السعودية
           </div>
         </div>
       </div>
+
+      <style>{`
+        .footer-link:hover {
+          color: var(--accent-gold);
+        }
+        .social-link:hover {
+          background-color: rgba(197, 160, 89, 0.2);
+          transform: translateY(-2px);
+        }
+      `}</style>
     </footer>
   );
 };
