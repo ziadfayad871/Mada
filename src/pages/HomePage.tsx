@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowUpLeft, BarChart3, Camera, ChevronLeft, ChevronRight, Clapperboard, Lightbulb, Palette, Play, Send, Share2 } from 'lucide-react';
+import { ArrowLeft, ArrowUpLeft, BarChart3, Camera, ChevronLeft, ChevronRight, Clapperboard, Lightbulb, Palette, Play, Send, Share2, TrendingUp } from 'lucide-react';
 import { BRANDS } from '../data/brands';
 
-const services = [['التسويق الرقمي', BarChart3], ['إدارة السوشيال ميديا', Share2], ['التصميم الإبداعي', Palette], ['إنتاج الفيديوهات', Clapperboard], ['تصوير فوتوغرافي', Camera], ['صناعة المحتوى', Lightbulb]] as const;
+const services = [['التسويق الرقمي', TrendingUp], ['إدارة السوشيال ميديا', Share2], ['التصميم الإبداعي', Palette], ['إنتاج الفيديوهات', Clapperboard], ['تصوير فوتوغرافي', Camera], ['صناعة المحتوى', Lightbulb]] as const;
 
 // صور احترافية تطابق التصميم المرجعي
 const photos = [
-  'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1400&q=85', // كاميرا سينمائية
+  'https://images.unsplash.com/photo-1585644198527-05f654868f94?auto=format&fit=crop&w=1400&q=85', // كاميرا فيديو احترافية على سبورة
   'https://images.unsplash.com/photo-1616530940355-351fabd9524b?auto=format&fit=crop&w=1400&q=85', // استوديو تصوير
   'https://images.unsplash.com/photo-1636955779321-b2c9d7a9d3ec?auto=format&fit=crop&w=1400&q=85', // معدات إنتاج
   'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1400&q=85'  // كاميرا بأضواء
@@ -37,9 +37,9 @@ export const HomePage: React.FC = () => {
       
       <aside className="clients-panel reveal delay-2">
         <div>
-          <span className="eyebrow">شركاء النجاح</span>
+          <span className="eyebrow">بعض من عملائنا</span>
           <h2>بعض من عملائنا</h2>
-          <p>علامات تجارية وثقت بنا</p>
+          <p>شركات وعلامات تجارية وثقتمونا</p>
         </div>
         <div className="mini-brand-grid">
           {BRANDS.slice(0,5).map((brand,i)=>(
@@ -52,7 +52,7 @@ export const HomePage: React.FC = () => {
             </Link>
           ))}
           <Link to="/brands" className="mini-brand">
-            <b>+</b><small>المزيد</small>
+            <b>+</b><small>and more...</small>
           </Link>
         </div>
         <Link to="/brands" className="text-link">

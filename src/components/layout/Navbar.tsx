@@ -7,9 +7,9 @@ const links = [
   ['الرئيسية', '/'],
   ['من نحن', '/about'],
   ['خدماتنا', '/services'],
-  ['أعمالنا', '/works'],
-  ['العلامات التجارية', '/brands'],
-  ['تواصل معنا', '/contact']
+  ['أعمالنا', '/brands'],
+  ['فريق العمل', '/team'],
+  ['التواصل', '/contact']
 ];
 
 export const Navbar: React.FC = () => {

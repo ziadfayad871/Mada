@@ -1,6 +1,6 @@
 import React from 'react';
 import { SERVICES } from '../data/services';
-import { Palette, Camera, PenTool, Share2, TrendingUp, Target, Sparkles, Award } from 'lucide-react';
+import { Palette, Camera, PenTool, Share2, TrendingUp, Target, Award, Clapperboard, Lightbulb } from 'lucide-react';
 import { ContactForm } from '../components/ui/ContactForm';
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -10,8 +10,9 @@ const iconMap: Record<string, React.ReactNode> = {
   Share2: <Share2 size={32} />,
   TrendingUp: <TrendingUp size={32} />,
   Target: <Target size={32} />,
-  Sparkles: <Sparkles size={32} />,
-  Award: <Award size={32} />
+  Award: <Award size={32} />,
+  Clapperboard: <Clapperboard size={32} />,
+  Lightbulb: <Lightbulb size={32} />
 };
 
 export const ServicesPage: React.FC = () => {
