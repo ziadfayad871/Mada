@@ -1,6 +1,6 @@
 import React from 'react';
 import { SERVICES } from '../data/services';
-import { Palette, Camera, PenTool, Share2, TrendingUp, Target, Award, Clapperboard, Lightbulb } from 'lucide-react';
+import { Palette, Camera, PenTool, Share2, TrendingUp, Target, Award, Clapperboard, Lightbulb, Sparkles } from 'lucide-react';
 import { ContactForm } from '../components/ui/ContactForm';
 
 const iconMap: Record<string, React.ReactNode> = {
