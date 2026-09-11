@@ -1,0 +1,41 @@
+﻿/* Primary Button - Enhanced Hover */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.8rem;
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  border-radius: var(--radius-full);
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 18px rgba(44, 31, 23, 0.18);
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-warm);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(137, 80, 47, 0.35);
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-primary:active {
+  transform: translateY(-1px) scale(0.98);
+}
