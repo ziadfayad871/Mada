@@ -22,7 +22,7 @@ export const HomePage: React.FC = () => {
   return (
     <div>
       {/* ==================================================
-          1. HERO SECTION (Mirroring design-reference.png Screen 1)
+          1. HERO SECTION (With exact requested camera photo)
       ================================================== */}
       <section
         style={{
@@ -33,21 +33,6 @@ export const HomePage: React.FC = () => {
           backgroundColor: 'var(--bg-primary)'
         }}
       >
-        {/* Subtle Decorative Leaf Watermark in Background matching reference */}
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '240px',
-            height: '240px',
-            opacity: 0.12,
-            pointerEvents: 'none',
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 80 Q 50 10 90 80 Q 50 90 10 80 Z' fill='%2%232C1F17' /%3E%3C/svg%3E")`,
-            backgroundRepeat: 'no-repeat'
-          }}
-        />
-
         <div className="container">
           <div className="hero-grid">
             {/* Right Column in RTL: Copy & Headlines */}
@@ -77,15 +62,15 @@ export const HomePage: React.FC = () => {
               </div>
             </div>
 
-            {/* Center Column: Camera on Tripod Photography (Matching design-reference.png screen 1) */}
+            {/* Center Column: Original Requested Camera Photo */}
             <div className="hero-camera-card">
               <img
-                src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80"
-                alt="MADA Studio Camera on Tripod"
+                src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=80"
+                alt="MADA Studio Camera"
                 className="hero-camera-photo"
               />
 
-              {/* Warm Studio Gradient Overlay */}
+              {/* Subtle Warm Gradient Overlay */}
               <div className="hero-camera-overlay" />
 
               {/* Arabic Calligraphic Overlay Text */}
@@ -186,23 +171,26 @@ export const HomePage: React.FC = () => {
             border: 1px solid var(--border-color);
             aspect-ratio: 4/5;
             min-height: 440px;
-            background-color: var(--bg-secondary);
+            background-color: #120D09;
             width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
           }
           .hero-camera-photo {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 25%;
+            object-position: center center;
             transition: transform 0.6s ease;
           }
           .hero-camera-card:hover .hero-camera-photo {
-            transform: scale(1.04);
+            transform: scale(1.05);
           }
           .hero-camera-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(44, 31, 23, 0.45) 0%, rgba(0,0,0,0) 65%);
+            background: linear-gradient(to top, rgba(18, 13, 9, 0.65) 0%, rgba(0,0,0,0) 60%);
             pointer-events: none;
           }
           .hero-camera-calligraphy {
@@ -215,7 +203,7 @@ export const HomePage: React.FC = () => {
             letter-spacing: 0.12em;
             writing-mode: vertical-rl;
             text-transform: uppercase;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
           }
           .hero-brands-card {
             background-color: var(--bg-card);
@@ -270,7 +258,7 @@ export const HomePage: React.FC = () => {
             .hero-camera-card {
               order: 2;
               aspect-ratio: 16/10;
-              min-height: 300px;
+              min-height: 320px;
               max-height: 420px;
             }
             .hero-brands-card {
@@ -288,10 +276,14 @@ export const HomePage: React.FC = () => {
 
           @media (max-width: 600px) {
             .hero-camera-card {
-              aspect-ratio: 16/10;
-              min-height: 240px;
-              max-height: 320px;
+              aspect-ratio: 4/3;
+              min-height: 280px;
+              max-height: 360px;
               border-radius: var(--radius-lg);
+            }
+            .hero-camera-photo {
+              object-fit: cover;
+              object-position: center center;
             }
             .hero-brands-grid {
               grid-template-columns: repeat(2, 1fr);
@@ -308,7 +300,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ==================================================
-          2. QUICK SERVICES STRIP (Matching Screen 5)
+          2. QUICK SERVICES STRIP
       ================================================== */}
       <section style={{ backgroundColor: 'var(--bg-secondary)', padding: '3.5rem 0' }}>
         <div className="container">
@@ -415,7 +407,7 @@ export const HomePage: React.FC = () => {
                 مدى هي وكالة تسويق رقمي متخصصة في تقديم حلول متكاملة تساعد العلامات التجارية على الوصول إلى جمهورها وتحقيق نتائج ملموسة من خلال استراتيجيات إبداعية ومحتوى احترافي وحملات إعلانية فعالة.
               </p>
 
-              {/* Quick stats numbers matching reference screen 6 */}
+              {/* Quick stats numbers */}
               <div
                 style={{
                   display: 'flex',
