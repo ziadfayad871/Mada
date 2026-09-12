@@ -18,41 +18,42 @@ export const MadaLogo: React.FC<MadaLogoProps> = ({
   const darkColor = '#0F1B3D';
   const lightColor = '#FBF8F3';
   const goldColor = '#C4993B';
+  const bronzeColor = '#A07830';
 
   const textColor = variant === 'dark' ? darkColor : lightColor;
   const subtitleColor = variant === 'dark' ? 'var(--text-muted)' : 'rgba(251, 248, 243, 0.7)';
 
-  const w = size === 'sm' ? 120 : size === 'md' ? 170 : 240;
-  const h = size === 'sm' ? 52 : size === 'md' ? 70 : 98;
-  const fontSize = size === 'sm' ? 52 : size === 'md' ? 68 : 96;
+  const w = size === 'sm' ? 120 : size === 'md' ? 180 : 260;
+  const h = size === 'sm' ? 52 : size === 'md' ? 72 : 104;
+  const fontSize = size === 'sm' ? 52 : size === 'md' ? 72 : 104;
   const subtitleSize = size === 'sm' ? '0.5rem' : size === 'md' ? '0.6rem' : '0.7rem';
 
   const dotRows = [
-    { y: 12, dots: [
-      { cx: 82, r: 3.0 }, { cx: 90, r: 2.7 }, { cx: 98, r: 2.3 },
-      { cx: 106, r: 1.9 }, { cx: 114, r: 1.4 }, { cx: 122, r: 0.9 }
+    { y: 16, dots: [
+      { cx: 120, r: 2.2 }, { cx: 128, r: 2.0 }, { cx: 136, r: 1.8 },
+      { cx: 144, r: 1.5 }, { cx: 152, r: 1.2 }, { cx: 160, r: 0.9 }
     ]},
-    { y: 21, dots: [
-      { cx: 80, r: 3.3 }, { cx: 88, r: 3.0 }, { cx: 96, r: 2.6 },
-      { cx: 104, r: 2.1 }, { cx: 112, r: 1.6 }, { cx: 120, r: 1.1 }, { cx: 128, r: 0.6 }
+    { y: 24, dots: [
+      { cx: 116, r: 2.6 }, { cx: 124, r: 2.4 }, { cx: 132, r: 2.1 },
+      { cx: 140, r: 1.8 }, { cx: 148, r: 1.4 }, { cx: 156, r: 1.0 }, { cx: 164, r: 0.6 }
     ]},
-    { y: 30, dots: [
-      { cx: 78, r: 3.5 }, { cx: 86, r: 3.2 }, { cx: 94, r: 2.8 },
-      { cx: 102, r: 2.3 }, { cx: 110, r: 1.8 }, { cx: 118, r: 1.3 },
-      { cx: 126, r: 0.8 }
+    { y: 32, dots: [
+      { cx: 112, r: 2.8 }, { cx: 120, r: 2.6 }, { cx: 128, r: 2.3 },
+      { cx: 136, r: 2.0 }, { cx: 144, r: 1.6 }, { cx: 152, r: 1.2 },
+      { cx: 160, r: 0.8 }, { cx: 168, r: 0.4 }
     ]},
-    { y: 39, dots: [
-      { cx: 78, r: 3.5 }, { cx: 86, r: 3.2 }, { cx: 94, r: 2.8 },
-      { cx: 102, r: 2.3 }, { cx: 110, r: 1.8 }, { cx: 118, r: 1.3 },
-      { cx: 126, r: 0.8 }, { cx: 134, r: 0.4 }
+    { y: 40, dots: [
+      { cx: 112, r: 3.0 }, { cx: 120, r: 2.7 }, { cx: 128, r: 2.4 },
+      { cx: 136, r: 2.1 }, { cx: 144, r: 1.7 }, { cx: 152, r: 1.3 },
+      { cx: 160, r: 0.9 }, { cx: 168, r: 0.5 }
     ]},
     { y: 48, dots: [
-      { cx: 80, r: 3.2 }, { cx: 88, r: 2.8 }, { cx: 96, r: 2.4 },
-      { cx: 104, r: 1.9 }, { cx: 112, r: 1.4 }, { cx: 120, r: 0.9 }
+      { cx: 116, r: 2.8 }, { cx: 124, r: 2.5 }, { cx: 132, r: 2.2 },
+      { cx: 140, r: 1.8 }, { cx: 148, r: 1.4 }, { cx: 156, r: 1.0 }
     ]},
     { y: 56, dots: [
-      { cx: 84, r: 2.6 }, { cx: 92, r: 2.2 }, { cx: 100, r: 1.8 },
-      { cx: 108, r: 1.3 }, { cx: 116, r: 0.8 }
+      { cx: 120, r: 2.4 }, { cx: 128, r: 2.1 }, { cx: 136, r: 1.8 },
+      { cx: 144, r: 1.4 }, { cx: 152, r: 1.0 }
     ]},
   ];
 
@@ -61,16 +62,16 @@ export const MadaLogo: React.FC<MadaLogoProps> = ({
       <svg
         width={w}
         height={h}
-        viewBox="0 0 160 70"
+        viewBox="0 0 180 80"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         style={{ overflow: 'visible' }}
       >
         <defs>
           <mask id={`${uid}-mask`}>
-            <rect width="160" height="70" fill="black" />
+            <rect width="180" height="80" fill="black" />
             <text
-              x="80" y="56"
+              x="90" y="64"
               textAnchor="middle"
               fontFamily="'Cairo', 'Noto Sans Arabic', sans-serif"
               fontWeight="900"
@@ -84,7 +85,7 @@ export const MadaLogo: React.FC<MadaLogoProps> = ({
 
         {/* Solid base text */}
         <text
-          x="80" y="56"
+          x="90" y="64"
           textAnchor="middle"
           fontFamily="'Cairo', 'Noto Sans Arabic', sans-serif"
           fontWeight="900"
@@ -94,7 +95,7 @@ export const MadaLogo: React.FC<MadaLogoProps> = ({
           مدى
         </text>
 
-        {/* Halftone gold dots — masked to text shape */}
+        {/* Halftone gold dots — masked to text shape, right side */}
         <g mask={`url(#${uid}-mask)`}>
           {dotRows.map((row, ri) =>
             row.dots.map((dot, di) => (

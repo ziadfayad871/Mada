@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowUpLeft, BarChart3, Camera, ChevronLeft, ChevronRight, Clapperboard, Lightbulb, Palette, Play, Send, Share2, TrendingUp } from 'lucide-react';
 import { BRANDS } from '../data/brands';
+import { BrandLogoImage } from '../components/brand/BrandLogoImage';
 
 const services = [['التسويق الرقمي', TrendingUp], ['إدارة السوشيال ميديا', Share2], ['التصميم الإبداعي', Palette], ['إنتاج الفيديوهات', Clapperboard], ['تصوير فوتوغرافي', Camera], ['صناعة المحتوى', Lightbulb]] as const;
 
-// صور احترافية تطابق التصميم المرجعي
 const photos = [
-  'https://images.unsplash.com/photo-1585644198527-05f654868f94?auto=format&fit=crop&w=1400&q=85', // كاميرا فيديو احترافية على سبورة
-  'https://images.unsplash.com/photo-1616530940355-351fabd9524b?auto=format&fit=crop&w=1400&q=85', // استوديو تصوير
-  'https://images.unsplash.com/photo-1636955779321-b2c9d7a9d3ec?auto=format&fit=crop&w=1400&q=85', // معدات إنتاج
-  'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1400&q=85'  // كاميرا بأضواء
+  'https://cdn.pixabay.com/photo/2016/11/19/15/40/camera-1845945_1280.jpg',
+  'https://cdn.pixabay.com/photo/2019/03/11/03/14/studio-4046828_1280.jpg',
+  'https://cdn.pixabay.com/photo/2020/05/18/16/17/video-5186476_1280.jpg',
+  'https://cdn.pixabay.com/photo/2017/08/07/14/59/nikon-2601533_1280.jpg'
 ];
 
 export const HomePage: React.FC = () => {
@@ -45,7 +45,7 @@ export const HomePage: React.FC = () => {
               key={brand.id} 
               className={i===0?'mini-brand featured':'mini-brand'}
             >
-              <span>{brand.englishName || brand.name}</span>
+              <BrandLogoImage brandId={brand.id} name={brand.name} size={40} />
             </Link>
           ))}
           <Link to="/brands" className="mini-brand">
