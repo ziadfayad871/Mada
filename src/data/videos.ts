@@ -56,6 +56,39 @@ export const VIDEOS: VideoItem[] = [
     description: "فيديو سلطان العسل الرابع"
   },
   {
+    id: "leesanto-01",
+    brandId: "leesanto",
+    brandName: "لي سانتو",
+    title: "لي سانتو - فيديو 1",
+    thumbnail: "",
+    videoUrl: "https://youtube.com/shorts/LeVQ2N4AtFU",
+    duration: "",
+    category: "فيديو",
+    description: "فيديو لي سانتو الأول"
+  },
+  {
+    id: "leesanto-02",
+    brandId: "leesanto",
+    brandName: "لي سانتو",
+    title: "لي سانتو - فيديو 2",
+    thumbnail: "",
+    videoUrl: "https://youtube.com/shorts/sYi5UyInv4E",
+    duration: "",
+    category: "فيديو",
+    description: "فيديو لي سانتو الثاني"
+  },
+  {
+    id: "leesanto-03",
+    brandId: "leesanto",
+    brandName: "لي سانتو",
+    title: "لي سانتو - فيديو 3",
+    thumbnail: "",
+    videoUrl: "https://youtube.com/shorts/9tDv8a4pKRw",
+    duration: "",
+    category: "فيديو",
+    description: "فيديو لي سانتو الثالث"
+  },
+  {
     id: "fitness-01",
     brandId: "to-fitness",
     brandName: "نحو الرشاقه",
