@@ -35,6 +35,6 @@ jobs:
             set ftp:passive-mode yes;
             set ssl:verify-certificate no;
             open ftp://site91024.siteasp.net:21 -u site91024,'qF@6A2g+#wL4';
-            mirror -R --no-perms --verbose docs/ /;
+            mirror -R --no-perms --verbose docs/ /wwwroot/;
             bye
           "
