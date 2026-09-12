@@ -146,7 +146,18 @@ export const HomePage: React.FC = () => {
         <h2>لديك مشروع قادم؟<br/><em>خلّينا نصنعه.</em></h2>
         <p>شاركنا فكرتك ورؤيتك، وسيتواصل معك فريق مدى في أقرب وقت لمناقشة مشروعك وتحويله إلى واقع.</p>
       </div>
-      <form className="quick-form" onSubmit={e=>e.preventDefault()}>
+      <form className="quick-form" onSubmit={e=>{
+        e.preventDefault();
+        const f = e.target as HTMLFormElement;
+        const inputs = f.elements;
+        const name = (inputs[0] as HTMLInputElement).value;
+        const email = (inputs[1] as HTMLInputElement).value;
+        const phone = (inputs[2] as HTMLInputElement).value;
+        const msg = (inputs[3] as HTMLTextAreaElement).value;
+        const subject = encodeURIComponent(`رسالة من ${name}`);
+        const body = encodeURIComponent(`الاسم: ${name}\nالبريد: ${email}\nالهاتف: ${phone}\nالتفاصيل:\n${msg}`);
+        window.location.href = `mailto:madamarking@gmail.com?subject=${subject}&body=${body}`;
+      }}>
         <input placeholder="الاسم" required/>
         <input placeholder="البريد الإلكتروني" type="email" required/>
         <input placeholder="رقم الهاتف" type="tel"/>

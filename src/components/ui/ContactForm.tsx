@@ -13,6 +13,15 @@ export const ContactForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const subject = encodeURIComponent(`رسالة من ${formData.name} - ${formData.projectType}`);
+    const body = encodeURIComponent(
+      `الاسم: ${formData.name}\n` +
+      `البريد: ${formData.email}\n` +
+      `الهاتف: ${formData.phone}\n` +
+      `نوع المشروع: ${formData.projectType}\n` +
+      `التفاصيل:\n${formData.message}`
+    );
+    window.location.href = `mailto:madamarking@gmail.com?subject=${subject}&body=${body}`;
     setSubmitted(true);
   };
 
