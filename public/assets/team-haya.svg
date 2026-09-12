@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" fill="none">
+  <!-- Background -->
+  <rect width="300" height="400" rx="20" fill="#F5EDE4"/>
+  
+  <!-- Yellow/gold hijab silhouette -->
+  <circle cx="150" cy="140" r="60" fill="#C4993B"/>
+  <path d="M80 180 C80 140 105 110 150 100 C195 110 220 140 220 180 C220 220 210 260 150 280 C90 260 80 220 80 180Z" fill="#C4993B"/>
+  
+  <!-- Body silhouette -->
+  <path d="M90 280 C90 260 110 240 150 235 C190 240 210 260 210 280 L210 400 L90 400Z" fill="#3D2B1F" opacity="0.8"/>
+  
+  <!-- Subtle face area (no features) -->
+  <ellipse cx="150" cy="155" rx="35" ry="40" fill="#FBF8F3" opacity="0.2"/>
+</svg>
