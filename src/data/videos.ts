@@ -17,7 +17,7 @@ export const VIDEOS: VideoItem[] = [
     brandName: "سلطان العسل",
     title: "سلطان العسل - فيديو 1",
     thumbnail: "",
-    videoUrl: "https://drive.google.com/file/d/1oUa_MYk6AGJUxT4FrN0ydjRy5okn7HcI/preview",
+    videoUrl: "/videos/sultan-al-asal/sultan-01.mp4",
     duration: "",
     category: "فيديو",
     description: "فيديو سلطان العسل الأول"
@@ -28,7 +28,7 @@ export const VIDEOS: VideoItem[] = [
     brandName: "سلطان العسل",
     title: "سلطان العسل - فيديو 2",
     thumbnail: "",
-    videoUrl: "https://drive.google.com/file/d/1hzGIWLLeSrtN8xKN2LvaSjbfIUB4C7Xa/preview",
+    videoUrl: "/videos/sultan-al-asal/sultan-02.mp4",
     duration: "",
     category: "فيديو",
     description: "فيديو سلطان العسل الثاني"
@@ -39,7 +39,7 @@ export const VIDEOS: VideoItem[] = [
     brandName: "سلطان العسل",
     title: "سلطان العسل - فيديو 3",
     thumbnail: "",
-    videoUrl: "https://drive.google.com/file/d/1jS2X6XWEfFdJMuuTWFvd2sZ7WhAYNX-P/preview",
+    videoUrl: "/videos/sultan-al-asal/sultan-03.mp4",
     duration: "",
     category: "فيديو",
     description: "فيديو سلطان العسل الثالث"
