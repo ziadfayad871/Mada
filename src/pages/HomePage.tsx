@@ -111,7 +111,7 @@ export const HomePage: React.FC = () => {
         </div>
         <div className="work-text">
           <span className="eyebrow">مشروع مختار</span>
-          <h3>{['سلطان العسل','Hermatech','TO FITNESS','Lulu Glass'][active]}</h3>
+          <h3><BrandLogoImage brandId={BRANDS[active].id} name={BRANDS[active].name} size={50} /></h3>
           <p>حملة متكاملة من الهوية البصرية حتى صناعة المحتوى والإنتاج المرئي، أُعدت لتظهر العلامة بصورتها الأقوى وتحقق أهدافها التسويقية.</p>
           <Link to="/works" className="text-link">
             شاهد المشروع <ArrowLeft size={17}/>
