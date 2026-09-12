@@ -28,7 +28,7 @@ jobs:
 
       - name: Deploy via FTP
         run: |
-          apt-get update && apt-get install -y lftp
+          sudo apt-get update && sudo apt-get install -y lftp
           lftp -c "
             set ssl:verify-certificate no;
             open ftp://site91024.siteasp.net:21 -u site91024,'qF@6A2g+#wL4';
