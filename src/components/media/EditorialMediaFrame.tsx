@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { VideoItem } from '../../data/videos';
 import { Play, Pause, ChevronRight, ChevronLeft, Maximize2 } from 'lucide-react';
 
@@ -8,6 +8,28 @@ interface EditorialMediaFrameProps {
   onOpenModal?: (video: VideoItem) => void;
 }
 
+function getYouTubeEmbedUrl(url: string): string {
+  if (url.includes('/shorts/')) {
+    const id = url.split('/shorts/')[1]?.split('?')[0];
+    return `https://www.youtube.com/embed/${id}`;
+  }
+  if (url.includes('v=')) {
+    const id = url.split('v=')[1]?.split('&')[0];
+    return `https://www.youtube.com/embed/${id}`;
+  }
+  const parts = url.split('/');
+  const last = parts[parts.length - 1]?.split('?')[0];
+  return `https://www.youtube.com/embed/${last}`;
+}
+
+function isYouTubeUrl(url: string): boolean {
+  return url.includes('youtube.com') || url.includes('youtu.be');
+}
+
+function isGoogleDriveUrl(url: string): boolean {
+  return url.includes('drive.google.com');
+}
+
 export const EditorialMediaFrame: React.FC<EditorialMediaFrameProps> = ({
   videos,
   brandName,
@@ -15,7 +37,7 @@ export const EditorialMediaFrame: React.FC<EditorialMediaFrameProps> = ({
 }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = React.useRef<HTMLVideoElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   if (!videos || videos.length === 0) {
     return (
@@ -26,6 +48,8 @@ export const EditorialMediaFrame: React.FC<EditorialMediaFrameProps> = ({
   }
 
   const currentVideo = videos[selectedIndex] || videos[0];
+  const isYT = isYouTubeUrl(currentVideo.videoUrl);
+  const isGDrive = isGoogleDriveUrl(currentVideo.videoUrl);
 
   const handlePrev = () => {
     setIsPlaying(false);
@@ -48,6 +72,46 @@ export const EditorialMediaFrame: React.FC<EditorialMediaFrameProps> = ({
         setIsPlaying(true);
       }
     }
+  };
+
+  const renderPlayer = () => {
+    if (isYT) {
+      return (
+        <iframe
+          src={getYouTubeEmbedUrl(currentVideo.videoUrl)}
+          style={{ width: '100%', height: '100%', border: 'none' }}
+          allow="encrypted-media; picture-in-picture"
+          allowFullScreen
+          title={currentVideo.title}
+        />
+      );
+    }
+    if (isGDrive) {
+      return (
+        <iframe
+          src={currentVideo.videoUrl}
+          style={{ width: '100%', height: '100%', border: 'none' }}
+          allow="encrypted-media; picture-in-picture"
+          allowFullScreen
+          title={currentVideo.title}
+        />
+      );
+    }
+    return (
+      <video
+        ref={videoRef}
+        src={currentVideo.videoUrl}
+        poster={currentVideo.thumbnail}
+        controls
+        preload="metadata"
+        playsInline
+        style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'contain'
+        }}
+      />
+    );
   };
 
   return (
@@ -91,37 +155,30 @@ export const EditorialMediaFrame: React.FC<EditorialMediaFrameProps> = ({
 
       {/* Main Exhibition Media Frame Container */}
       <div className="main-media-frame">
-        <video
-          ref={videoRef}
-          src={currentVideo.videoUrl}
-          poster={currentVideo.thumbnail}
-          loop
-          playsInline
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover'
-          }}
-        />
+        {renderPlayer()}
 
         {/* Media Overlay Gradient */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(to top, rgba(30, 22, 16, 0.85) 0%, rgba(30, 22, 16, 0.1) 60%, rgba(0,0,0,0.2) 100%)',
-            pointerEvents: 'none'
-          }}
-        />
+        {!isYT && !isGDrive && (
+          <>
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                background: 'linear-gradient(to top, rgba(30, 22, 16, 0.85) 0%, rgba(30, 22, 16, 0.1) 60%, rgba(0,0,0,0.2) 100%)',
+                pointerEvents: 'none'
+              }}
+            />
 
-        {/* Center Play Button Overlay */}
-        <button
-          onClick={togglePlay}
-          className="media-play-btn"
-          aria-label="تشغيل"
-        >
-          {isPlaying ? <Pause size={26} /> : <Play size={26} style={{ marginLeft: '3px' }} />}
-        </button>
+            {/* Center Play Button Overlay */}
+            <button
+              onClick={togglePlay}
+              className="media-play-btn"
+              aria-label="تشغيل"
+            >
+              {isPlaying ? <Pause size={26} /> : <Play size={26} style={{ marginLeft: '3px' }} />}
+            </button>
+          </>
+        )}
 
         {/* Fullscreen Modal trigger button */}
         <button
@@ -173,12 +230,28 @@ export const EditorialMediaFrame: React.FC<EditorialMediaFrameProps> = ({
                 backgroundColor: 'var(--bg-card)'
               }}
             >
-              <div style={{ position: 'relative', aspectRatio: '16/9', overflow: 'hidden' }}>
-                <img
-                  src={vid.thumbnail}
-                  alt={vid.title}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                />
+              <div style={{ position: 'relative', aspectRatio: '9/16', overflow: 'hidden' }}>
+                {vid.thumbnail ? (
+                  <img
+                    src={vid.thumbnail}
+                    alt={vid.title}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                ) : (
+                  <div style={{
+                    width: '100%',
+                    height: '100%',
+                    background: 'linear-gradient(135deg, #2a1f15 0%, #1a1410 100%)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '0.5rem'
+                  }}>
+                    <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#C4993B', opacity: 0.6, textAlign: 'center' }}>
+                      {vid.brandName}
+                    </span>
+                  </div>
+                )}
                 <div
                   style={{
                     position: 'absolute',
@@ -194,30 +267,15 @@ export const EditorialMediaFrame: React.FC<EditorialMediaFrameProps> = ({
                       width: '28px',
                       height: '28px',
                       borderRadius: '50%',
-                      backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                      color: 'var(--text-primary)',
+                      backgroundColor: isSelected ? 'rgba(196, 153, 59, 0.9)' : 'rgba(255, 255, 255, 0.9)',
+                      color: isSelected ? '#FFFFFF' : 'var(--text-primary)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center'
                     }}
                   >
-                    <Play size={12} style={{ marginLeft: '1px' }} />
+                    <Play size={12} style={{ marginLeft: '1px' }} fill={isSelected ? 'currentColor' : 'none'} />
                   </div>
-                </div>
-                <div
-                  style={{
-                    position: 'absolute',
-                    bottom: '4px',
-                    right: '4px',
-                    padding: '1px 5px',
-                    borderRadius: '3px',
-                    backgroundColor: 'rgba(0,0,0,0.75)',
-                    color: '#fff',
-                    fontSize: '0.68rem',
-                    fontWeight: 600
-                  }}
-                >
-                  {vid.duration}
                 </div>
               </div>
               <div style={{ padding: '0.5rem 0.65rem' }}>
@@ -234,8 +292,8 @@ export const EditorialMediaFrame: React.FC<EditorialMediaFrameProps> = ({
         .main-media-frame {
           position: relative;
           width: 100%;
-          max-height: 520px;
-          aspect-ratio: 16/9;
+          max-height: 680px;
+          aspect-ratio: 9/16;
           background-color: #1E1610;
           border-radius: var(--radius-lg);
           overflow: hidden;
@@ -251,14 +309,17 @@ export const EditorialMediaFrame: React.FC<EditorialMediaFrameProps> = ({
           width: 64px;
           height: 64px;
           border-radius: 50%;
-          background-color: rgba(251, 248, 243, 0.92);
+          background-color: rgba(196, 153, 59, 0.9);
           backdrop-filter: blur(8px);
-          color: var(--text-primary);
+          color: #FFFFFF;
           display: flex;
           align-items: center;
           justify-content: center;
-          box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+          box-shadow: 0 8px 30px rgba(196, 153, 59, 0.4);
           transition: transform 0.25s ease;
+        }
+        .media-play-btn:hover {
+          transform: scale(1.08);
         }
         .fullscreen-trigger-btn {
           position: absolute;
@@ -297,14 +358,13 @@ export const EditorialMediaFrame: React.FC<EditorialMediaFrameProps> = ({
         }
         .media-previews-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
           gap: 1rem;
         }
 
         @media (max-width: 600px) {
           .main-media-frame {
-            aspect-ratio: 4/3;
-            max-height: 280px;
+            max-height: 500px;
             border-radius: var(--radius-md);
           }
           .media-play-btn {
