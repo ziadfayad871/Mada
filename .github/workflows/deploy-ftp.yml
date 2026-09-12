@@ -30,8 +30,10 @@ jobs:
         run: |
           sudo apt-get update && sudo apt-get install -y lftp
           lftp -c "
+            set net:timeout 10;
+            set net:max-retries 3;
             set ssl:verify-certificate no;
             open ftp://site91024.siteasp.net:8172 -u site91024,'9p!SbK3-@hH7';
-            mirror -R --no-perms --verbose docs/ /;
+            mirror -R --no-perms --verbose --parallel=1 docs/ /;
             quit
           "
