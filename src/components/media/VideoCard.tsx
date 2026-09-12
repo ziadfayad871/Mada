@@ -26,17 +26,32 @@ export const VideoCard: React.FC<VideoCardProps> = ({ video, onClick }) => {
     >
       {/* Thumbnail Container */}
       <div style={{ position: 'relative', aspectRatio: '16/9', overflow: 'hidden', backgroundColor: '#1E1610' }}>
-        <img
-          src={video.thumbnail}
-          alt={video.title}
-          style={{
+        {video.thumbnail ? (
+          <img
+            src={video.thumbnail}
+            alt={video.title}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              transition: 'transform 0.5s ease'
+            }}
+            className="thumbnail-img"
+          />
+        ) : (
+          <div style={{
             width: '100%',
             height: '100%',
-            objectFit: 'cover',
-            transition: 'transform 0.5s ease'
-          }}
-          className="thumbnail-img"
-        />
+            background: 'linear-gradient(135deg, #2a1f15 0%, #1a1410 100%)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            <span style={{ fontSize: '1.2rem', fontWeight: 700, color: '#C4993B', opacity: 0.6 }}>
+              {video.brandName}
+            </span>
+          </div>
+        )}
 
         {/* Dark Gradient Overlay */}
         <div

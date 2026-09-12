@@ -124,15 +124,25 @@ export const VideoModal: React.FC<VideoModalProps> = ({
 
         {/* Video Player */}
         <div style={{ position: 'relative', aspectRatio: '16/9', backgroundColor: '#000' }}>
-          <video
-            ref={videoRef}
-            src={video.videoUrl}
-            poster={video.thumbnail}
-            controls
-            autoPlay
-            playsInline
-            style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-          />
+          {video.videoUrl.includes('drive.google.com') ? (
+            <iframe
+              src={video.videoUrl}
+              style={{ width: '100%', height: '100%', border: 'none' }}
+              allow="autoplay"
+              allowFullScreen
+              title={video.title}
+            />
+          ) : (
+            <video
+              ref={videoRef}
+              src={video.videoUrl}
+              poster={video.thumbnail}
+              controls
+              autoPlay
+              playsInline
+              style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+            />
+          )}
         </div>
 
         {/* Modal Bottom Controls Bar */}
