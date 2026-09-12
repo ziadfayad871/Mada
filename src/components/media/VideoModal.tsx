@@ -132,6 +132,16 @@ export const VideoModal: React.FC<VideoModalProps> = ({
               allowFullScreen
               title={video.title}
             />
+          ) : video.videoUrl.includes('youtube.com') || video.videoUrl.includes('youtu.be') ? (
+            <iframe
+              src={video.videoUrl.includes('/shorts/') 
+                ? `https://www.youtube.com/embed/${video.videoUrl.split('/shorts/')[1].split('?')[0]}`
+                : `https://www.youtube.com/embed/${video.videoUrl.split('v=')[1]?.split('&')[0] || video.videoUrl.split('/').pop()}`}
+              style={{ width: '100%', height: '100%', border: 'none' }}
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              title={video.title}
+            />
           ) : (
             <video
               ref={videoRef}

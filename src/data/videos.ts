@@ -98,5 +98,82 @@ export const VIDEOS: VideoItem[] = [
     duration: "",
     category: "فيديو",
     description: "فيديو نخبة الجوف الثالث"
+  },
+  {
+    id: "zeela-01",
+    brandId: "zeela",
+    brandName: "زيلا",
+    title: "زيلا - فيديو 1",
+    thumbnail: "",
+    videoUrl: "/videos/zeela/IMG_6825.MP4",
+    duration: "",
+    category: "فيديو",
+    description: "فيديو زيلا الأول"
+  },
+  {
+    id: "zeela-02",
+    brandId: "zeela",
+    brandName: "زيلا",
+    title: "زيلا - فيديو 2",
+    thumbnail: "",
+    videoUrl: "/videos/zeela/IMG_6826.MP4",
+    duration: "",
+    category: "فيديو",
+    description: "فيديو زيلا الثاني"
+  },
+  {
+    id: "zeela-03",
+    brandId: "zeela",
+    brandName: "زيلا",
+    title: "زيلا - فيديو 3",
+    thumbnail: "",
+    videoUrl: "/videos/zeela/IMG_6827.MP4",
+    duration: "",
+    category: "فيديو",
+    description: "فيديو زيلا الثالث"
+  },
+  {
+    id: "mada-baram-01",
+    brandId: "mada-al-baram",
+    brandName: "مدى البراعم",
+    title: "مدى البراعم - فيديو 1",
+    thumbnail: "",
+    videoUrl: "https://www.youtube.com/shorts/KMpHbL5wH1Q",
+    duration: "",
+    category: "فيديو",
+    description: "فيديو مدى البراعم من يوتيوب"
+  },
+  {
+    id: "hematech-01",
+    brandId: "hermatech",
+    brandName: "همتك",
+    title: "همتك - فيديو 1",
+    thumbnail: "",
+    videoUrl: "/videos/hematech/IMG_8134.mp4",
+    duration: "",
+    category: "فيديو",
+    description: "فيديو همتك الأول"
+  },
+  {
+    id: "hematech-02",
+    brandId: "hermatech",
+    brandName: "همتك",
+    title: "همتك - فيديو 2",
+    thumbnail: "",
+    videoUrl: "/videos/hematech/IMG_8135.mp4",
+    duration: "",
+    category: "فيديو",
+    description: "فيديو همتك الثاني"
+  },
+  {
+    id: "hematech-03",
+    brandId: "hermatech",
+    brandName: "همتك",
+    title: "همتك - فيديو 3",
+    thumbnail: "",
+    videoUrl: "/videos/hematech/IMG_8136.mp4",
+    duration: "",
+    category: "فيديو",
+    description: "فيديو همتك الثالث"
   }
 ];
