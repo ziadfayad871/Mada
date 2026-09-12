@@ -43,5 +43,27 @@ export const VIDEOS: VideoItem[] = [
     duration: "",
     category: "فيديو",
     description: "فيديو سلطان العسل الثالث"
+  },
+  {
+    id: "fitness-01",
+    brandId: "to-fitness",
+    brandName: "نحو الرشاقه",
+    title: "نحو الرشاقه - فيديو 1",
+    thumbnail: "",
+    videoUrl: "/videos/to-fitness/IMG_8150.mp4",
+    duration: "",
+    category: "فيديو",
+    description: "فيديو نحو الرشاقه الأول"
+  },
+  {
+    id: "fitness-02",
+    brandId: "to-fitness",
+    brandName: "نحو الرشاقه",
+    title: "نحو الرشاقه - فيديو 2",
+    thumbnail: "",
+    videoUrl: "/videos/to-fitness/IMG_8151.mp4",
+    duration: "",
+    category: "فيديو",
+    description: "فيديو نحو الرشاقه الثاني"
   }
 ];
