@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" fill="none">
+  <defs>
+    <clipPath id="textClip">
+      <text x="250" y="220" font-family="'Cairo', sans-serif" font-weight="900" font-size="200" fill="white">مىدا</text>
+    </clipPath>
+  </defs>
+  
+  <!-- Approximate logo recreation based on reference -->
+  <!-- Dark blue Arabic text "مدى" -->
+  <text x="250" y="220" font-family="'Cairo', 'Noto Sans Arabic', sans-serif" font-weight="900" font-size="200" fill="#0F1B3D">مدى</text>
+  
+  <!-- Gold halftone dots on right side of the text -->
+  <g opacity="1">
+    <circle cx="520" cy="100" r="4" fill="#C4993B"/>
+    <circle cx="535" cy="100" r="5" fill="#C4993B"/>
+    <circle cx="550" cy="100" r="6" fill="#C4993B"/>
+    <circle cx="565" cy="100" r="5" fill="#C4993B"/>
+    <circle cx="580" cy="100" r="4" fill="#C4993B"/>
+    
+    <circle cx="510" cy="125" r="5" fill="#C4993B"/>
+    <circle cx="525" cy="125" r="6" fill="#C4993B"/>
+    <circle cx="540" cy="125" r="7" fill="#C4993B"/>
+    <circle cx="555" cy="125" r="6" fill="#C4993B"/>
+    <circle cx="570" cy="125" r="5" fill="#C4993B"/>
+    <circle cx="585" cy="125" r="4" fill="#C4993B"/>
+    
+    <circle cx="500" cy="150" r="6" fill="#C4993B"/>
+    <circle cx="515" cy="150" r="7" fill="#C4993B"/>
+    <circle cx="530" cy="150" r="8" fill="#C4993B"/>
+    <circle cx="545" cy="150" r="7" fill="#C4993B"/>
+    <circle cx="560" cy="150" r="6" fill="#C4993B"/>
+    <circle cx="575" cy="150" r="5" fill="#C4993B"/>
+    <circle cx="590" cy="150" r="4" fill="#C4993B"/>
+    
+    <circle cx="500" cy="175" r="7" fill="#C4993B"/>
+    <circle cx="515" cy="175" r="8" fill="#C4993B"/>
+    <circle cx="530" cy="175" r="8" fill="#C4993B"/>
+    <circle cx="545" cy="175" r="7" fill="#C4993B"/>
+    <circle cx="560" cy="175" r="6" fill="#C4993B"/>
+    <circle cx="575" cy="175" r="5" fill="#C4993B"/>
+    <circle cx="590" cy="175" r="3" fill="#C4993B"/>
+    
+    <circle cx="510" cy="200" r="6" fill="#C4993B"/>
+    <circle cx="525" cy="200" r="7" fill="#C4993B"/>
+    <circle cx="540" cy="200" r="8" fill="#C4993B"/>
+    <circle cx="555" cy="200" r="7" fill="#C4993B"/>
+    <circle cx="570" cy="200" r="6" fill="#C4993B"/>
+    <circle cx="585" cy="200" r="4" fill="#C4993B"/>
+    
+    <circle cx="520" cy="225" r="5" fill="#C4993B"/>
+    <circle cx="535" cy="225" r="6" fill="#C4993B"/>
+    <circle cx="550" cy="225" r="7" fill="#C4993B"/>
+    <circle cx="565" cy="225" r="6" fill="#C4993B"/>
+    <circle cx="580" cy="225" r="5" fill="#C4993B"/>
+    
+    <circle cx="530" cy="250" r="4" fill="#C4993B"/>
+    <circle cx="545" cy="250" r="5" fill="#C4993B"/>
+    <circle cx="560" cy="250" r="6" fill="#C4993B"/>
+    <circle cx="575" cy="250" r="5" fill="#C4993B"/>
+  </g>
+</svg>
