@@ -10,6 +10,9 @@ const photos = [
   '/Mada/assets/camera.jpg',
   '/Mada/assets/camera.jpg',
   '/Mada/assets/camera.jpg',
+  '/Mada/assets/camera.jpg',
+  '/Mada/assets/camera.jpg',
+  '/Mada/assets/camera.jpg',
   '/Mada/assets/camera.jpg'
 ];
 
@@ -130,11 +133,11 @@ export const HomePage: React.FC = () => {
         ))}
       </div>
       <div className="slider-controls">
-        <button onClick={()=>setActive((active+3)%4)}>
+        <button onClick={()=>setActive((active+6)%7)}>
           <ChevronRight/>
         </button>
-        <span>{active+1} / 4</span>
-        <button onClick={()=>setActive((active+1)%4)}>
+        <span>{active+1} / 7</span>
+        <button onClick={()=>setActive((active+1)%7)}>
           <ChevronLeft/>
         </button>
       </div>
