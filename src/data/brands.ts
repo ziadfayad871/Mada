@@ -32,7 +32,7 @@ export const BRANDS: Brand[] = [
     id: "hermatech",
     slug: "hermatech",
     name: "همتك",
-    englishName: "hermatech",
+    englishName: "HEMATECH",
     tagline: "تقنية تصنع المستقبل",
     description: "خطة تسويقية متكاملة قدمت من خلالها رؤية العلامة واستعراض الحلول البرمجية والتقنية المبتكرة.",
     logo: "/Mada/assets/brands/hermatech.svg",

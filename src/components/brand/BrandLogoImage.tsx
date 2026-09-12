@@ -46,7 +46,7 @@ export const BrandLogoImage: React.FC<BrandLogoImageProps> = ({
             همتك
           </span>
           <span style={{ fontSize: '0.55rem', fontWeight: 600, color: fillColor, opacity: 0.8, letterSpacing: '0.1em' }}>
-            HERMATECH
+            HEMATECH
           </span>
         </div>
       );
