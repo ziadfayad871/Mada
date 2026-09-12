@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', marginTop: '0.5rem' }}>
               <a
-                href="https://instagram.com/madamarking1"
+                href="https://instagram.com/madamarketing1"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
@@ -53,7 +53,7 @@ export const Footer: React.FC = () => {
                 <Instagram size={19} />
               </a>
               <a
-                href="https://tiktok.com/@madamarking1"
+                href="https://tiktok.com/@madamarketing1"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="TikTok"
