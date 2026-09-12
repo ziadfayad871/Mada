@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
           }}
         >
           {/* Col 1: Logo & Agency Bio */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', alignItems: 'flex-start' }}>
             <MadaLogo variant="light" size="md" />
             <p style={{ fontSize: '0.95rem', color: '#B5A596', lineHeight: 1.75, maxWidth: '340px' }}>
               وكالة تسويق رقمي وإنتاج محتوى متخصصة في تقديم حلول متكاملة تساعد العلامات التجارية على تحقيق أهدافها ونتائج ملموسة.
@@ -143,9 +143,6 @@ export const Footer: React.FC = () => {
         >
           <div>
             جميع الحقوق محفوظة © {new Date().getFullYear()} وكالة مدى للتسويق الرقمي
-          </div>
-          <div>
-            تصميم وتطوير هادئ وفاخر للعلامات السعودية
           </div>
         </div>
       </div>
