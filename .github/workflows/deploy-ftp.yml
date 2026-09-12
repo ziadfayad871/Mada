@@ -31,7 +31,7 @@ jobs:
           sudo apt-get update && sudo apt-get install -y lftp
           lftp -c "
             set ssl:verify-certificate no;
-            open ftp://site91024.siteasp.net:21 -u site91024,'qF@6A2g+#wL4';
+            open ftp://site91024.siteasp.net:8172 -u site91024,'9p!SbK3-@hH7';
             mirror -R --no-perms --verbose docs/ /;
             quit
           "
