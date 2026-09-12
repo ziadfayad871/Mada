@@ -65,5 +65,38 @@ export const VIDEOS: VideoItem[] = [
     duration: "",
     category: "فيديو",
     description: "فيديو نحو الرشاقه الثاني"
+  },
+  {
+    id: "nukbat-01",
+    brandId: "nukbat-al-jawf",
+    brandName: "نخبة الجوف",
+    title: "نخبة الجوف - فيديو 1",
+    thumbnail: "",
+    videoUrl: "/videos/nukbat-al-jawf/IMG_6822.mp4",
+    duration: "",
+    category: "فيديو",
+    description: "فيديو نخبة الجوف الأول"
+  },
+  {
+    id: "nukbat-02",
+    brandId: "nukbat-al-jawf",
+    brandName: "نخبة الجوف",
+    title: "نخبة الجوف - فيديو 2",
+    thumbnail: "",
+    videoUrl: "/videos/nukbat-al-jawf/IMG_6823.mp4",
+    duration: "",
+    category: "فيديو",
+    description: "فيديو نخبة الجوف الثاني"
+  },
+  {
+    id: "nukbat-03",
+    brandId: "nukbat-al-jawf",
+    brandName: "نخبة الجوف",
+    title: "نخبة الجوف - فيديو 3",
+    thumbnail: "",
+    videoUrl: "/videos/nukbat-al-jawf/IMG_6824.mp4",
+    duration: "",
+    category: "فيديو",
+    description: "فيديو نخبة الجوف الثالث"
   }
 ];

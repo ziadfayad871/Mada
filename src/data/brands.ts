@@ -99,5 +99,17 @@ export const BRANDS: Brand[] = [
     coverImage: "https://images.unsplash.com/photo-1576495199011-eb94736d05d6?auto=format&fit=crop&w=1200&q=80",
     tags: ["تصميم الهوية البصرية", "إنتاج المحتوى", "التسويق الرقمي"],
     stats: { videosCount: 4, campaignsCount: 3, reach: "+2.0M" }
+  },
+  {
+    id: "nukbat-al-jawf",
+    slug: "nukbat-al-jawf",
+    name: "نخبة الجوف",
+    englishName: "NUKBAT AL JAWF",
+    tagline: "تميز وإبداع",
+    description: "علامة تجارية سعودية تتميز بالجودة العالية والابتكار في تقديم منتجات وخدمات متميزة.",
+    logo: "/assets/brands/nukbat-al-jawf.svg",
+    coverImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
+    tags: ["الهوية البصرية", "صناعة المحتوى", "التصوير"],
+    stats: { videosCount: 3, campaignsCount: 2, reach: "+1.8M" }
   }
 ];

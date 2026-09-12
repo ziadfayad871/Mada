@@ -133,6 +133,22 @@ export const BrandLogoImage: React.FC<BrandLogoImageProps> = ({
         </div>
       );
 
+    case 'nukbat-al-jawf':
+      return (
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}>
+          <svg width={size * 0.8} height={size * 0.8} viewBox="0 0 60 60" fill="none">
+            <path d="M30 8 L52 20 L52 44 L30 56 L8 44 L8 20 Z" stroke={fillColor} strokeWidth="3" />
+            <text x="30" y="38" fontSize="18" fontWeight="800" textAnchor="middle" fill={fillColor}>ن</text>
+          </svg>
+          <span style={{ fontSize: '0.85rem', fontWeight: 700, color: fillColor }}>
+            نخبة الجوف
+          </span>
+          <span style={{ fontSize: '0.55rem', fontWeight: 600, color: fillColor, opacity: 0.8, letterSpacing: '0.05em' }}>
+            NUKBAT AL JAWF
+          </span>
+        </div>
+      );
+
     default:
       return (
         <div style={{ fontSize: '1rem', fontWeight: 700, color: fillColor }}>
