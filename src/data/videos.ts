@@ -45,6 +45,17 @@ export const VIDEOS: VideoItem[] = [
     description: "فيديو سلطان العسل الثالث"
   },
   {
+    id: "sultan-04",
+    brandId: "sultan-al-asal",
+    brandName: "سلطان العسل",
+    title: "سلطان العسل - فيديو 4",
+    thumbnail: "",
+    videoUrl: "/videos/sultan-al-asal/sultan-04.mp4",
+    duration: "",
+    category: "فيديو",
+    description: "فيديو سلطان العسل الرابع"
+  },
+  {
     id: "fitness-01",
     brandId: "to-fitness",
     brandName: "نحو الرشاقه",
