@@ -1,0 +1,37 @@
+name: Deploy to Monster Hosting
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy via FTP
+        run: |
+          apt-get update && apt-get install -y lftp
+          lftp -c "
+            set ssl:verify-certificate no;
+            open ftp://site91024.siteasp.net:21 -u site91024,'qF@6A2g+#wL4';
+            mirror -R --delete --verbose docs/ /;
+            quit
+          "

@@ -13,7 +13,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: "زهراء الشهري",
     role: "Content Creator",
     bio: "متخصصة في صناعة المحتوى الإبداعي وصياغة القصص التسويقية التي تلامس الجمهور وتصنع أثراً حقيقياً.",
-    image: "/Mada/assets/team-zahra.jpg",
+    image: "/assets/team-zahra.jpg",
     specialties: ["صناعة المحتوى", "كتابة السيناريو", "التوجيه الإبداعي"]
   },
   {
@@ -21,7 +21,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: "هياء العجمي",
     role: "Co-Founder & Marketing",
     bio: "شريكة مؤسسة وخبيرة في الاستراتيجيات التسويقية وبناء الهويات التجارية الناجحة في السوق السعودي.",
-    image: "/Mada/assets/team-haya.jpg",
+    image: "/assets/team-haya.jpg",
     specialties: ["الاستراتيجيات التسويقية", "إدارة الحملات", "تطوير الأعمال"]
   }
 ];

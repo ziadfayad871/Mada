@@ -16,7 +16,7 @@ export const MadaLogo: React.FC<MadaLogoProps> = ({
   return (
     <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', direction: 'ltr' }}>
       <img
-        src="/Mada/assets/brands/mada-logo.jpg"
+        src="/assets/brands/mada-logo.jpg"
         alt="مدى - Marketing Agency"
         style={{ width: w, height: 'auto' }}
       />

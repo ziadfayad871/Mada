@@ -7,13 +7,13 @@ import { BrandLogoImage } from '../components/brand/BrandLogoImage';
 const services = [['التسويق الرقمي', TrendingUp], ['إدارة السوشيال ميديا', Share2], ['التصميم الإبداعي', Palette], ['إنتاج الفيديوهات', Clapperboard], ['تصوير فوتوغرافي', Camera], ['صناعة المحتوى', Lightbulb]] as const;
 
 const photos = [
-  '/Mada/assets/camera.jpg',
-  '/Mada/assets/camera.jpg',
-  '/Mada/assets/camera.jpg',
-  '/Mada/assets/camera.jpg',
-  '/Mada/assets/camera.jpg',
-  '/Mada/assets/camera.jpg',
-  '/Mada/assets/camera.jpg'
+  '/assets/camera.jpg',
+  '/assets/camera.jpg',
+  '/assets/camera.jpg',
+  '/assets/camera.jpg',
+  '/assets/camera.jpg',
+  '/assets/camera.jpg',
+  '/assets/camera.jpg'
 ];
 
 export const HomePage: React.FC = () => {
