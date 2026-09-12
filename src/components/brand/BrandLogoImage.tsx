@@ -18,7 +18,7 @@ export const BrandLogoImage: React.FC<BrandLogoImageProps> = ({
   const fillColor = inverted ? '#FFFFFF' : color;
 
   switch (brandId) {
-    case 'sultan-al-faisal':
+    case 'sultan-al-asal':
       return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}>
           <svg width={size} height={size} viewBox="0 0 100 100" fill="none">
@@ -27,10 +27,10 @@ export const BrandLogoImage: React.FC<BrandLogoImageProps> = ({
             <path d="M42 58 H58 V64 H42 Z" fill={fillColor} />
           </svg>
           <span style={{ fontSize: '0.8rem', fontWeight: 700, color: fillColor, letterSpacing: '0.05em' }}>
-            سلطان الفيصل
+            سلطان العسل
           </span>
           <span style={{ fontSize: '0.55rem', fontWeight: 600, color: fillColor, opacity: 0.8, letterSpacing: '0.1em' }}>
-            SULTAN ALFASIL
+            SULTAN AL ASAL
           </span>
         </div>
       );

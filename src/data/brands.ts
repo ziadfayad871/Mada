@@ -17,13 +17,13 @@ export interface Brand {
 
 export const BRANDS: Brand[] = [
   {
-    id: "sultan-al-faisal",
-    slug: "sultan-al-faisal",
-    name: "سلطان الفيصل",
-    englishName: "SULTAN ALFASIL",
+    id: "sultan-al-asal",
+    slug: "sultan-al-asal",
+    name: "سلطان العسل",
+    englishName: "SULTAN AL ASAL",
     tagline: "الفخامة والضيافة الأصيلة",
     description: "علامة تجارية سعودية متخصصة في الفخامة والضيافة، تقدم تجربة استثنائية تعكس التراث والحداثة في كل تفصيلة. من خلال حملاتنا، استعرضنا هوية العلامة بأسلوب عصري أنيق يبرز قيمها الفريدة ويوصل رسالتها للجمهور المستهدف.",
-    logo: "/assets/brands/sultan-al-faisal.svg",
+    logo: "/assets/brands/sultan-al-asal.svg",
     coverImage: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=80",
     tags: ["تصميم الهوية البصرية", "إنتاج فيديوهات", "إدارة السوشيال ميديا", "تصوير فوتوغرافي"],
     stats: {

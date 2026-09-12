@@ -29,9 +29,6 @@ export const HomePage: React.FC = () => {
       <div className="hero-visual reveal delay-1">
         <img src={photos[0]} alt="كاميرا تصوير احترافية"/>
         <div className="image-glow"/>
-        <button className="play-large" aria-label="تشغيل الفيديو">
-          <Play fill="currentColor" size={30}/>
-        </button>
         <span className="image-note">أفكار · محتوى · تسويق · إبداع</span>
       </div>
       
@@ -64,9 +61,6 @@ export const HomePage: React.FC = () => {
     <section className="about-strip section-shell">
       <div className="about-media">
         <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=85" alt="استوديو مدى"/>
-        <button className="play-large small">
-          <Play fill="currentColor" size={25}/>
-        </button>
       </div>
       <div className="about-content">
         <span className="eyebrow">من نحن</span>
@@ -109,18 +103,15 @@ export const HomePage: React.FC = () => {
     <section className="work-section section-shell">
       <div className="section-heading">
         <span className="eyebrow">أحدث الإنتاجات</span>
-        <h2>فيديوهات هذا المشروع</h2>
+        <h2>من أعمالنا</h2>
       </div>
       <div className="work-layout">
         <div className="work-main">
           <img src={photos[active]} alt="من أعمال مدى"/>
-          <button className="play-large">
-            <Play fill="currentColor" size={30}/>
-          </button>
         </div>
         <div className="work-text">
           <span className="eyebrow">مشروع مختار</span>
-          <h3>{['سلطان الفيصل','Hermatech','TO FITNESS','Lulu Glass'][active]}</h3>
+          <h3>{['سلطان العسل','Hermatech','TO FITNESS','Lulu Glass'][active]}</h3>
           <p>حملة متكاملة من الهوية البصرية حتى صناعة المحتوى والإنتاج المرئي، أُعدت لتظهر العلامة بصورتها الأقوى وتحقق أهدافها التسويقية.</p>
           <Link to="/works" className="text-link">
             شاهد المشروع <ArrowLeft size={17}/>
@@ -135,7 +126,6 @@ export const HomePage: React.FC = () => {
             key={photo}
           >
             <img src={photo} alt=""/>
-            <span><Play fill="currentColor" size={13}/></span>
           </button>
         ))}
       </div>
