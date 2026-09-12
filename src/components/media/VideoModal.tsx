@@ -66,7 +66,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({
         style={{
           position: 'relative',
           width: '100%',
-          maxWidth: '1000px',
+          maxWidth: '500px',
           backgroundColor: 'var(--bg-dark)',
           borderRadius: 'var(--radius-lg)',
           overflow: 'hidden',
@@ -123,7 +123,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({
         </div>
 
         {/* Video Player */}
-        <div style={{ position: 'relative', aspectRatio: '16/9', backgroundColor: '#000' }}>
+        <div style={{ position: 'relative', aspectRatio: '9/16', maxHeight: '75vh', backgroundColor: '#000' }}>
           {video.videoUrl.includes('drive.google.com') ? (
             <iframe
               src={video.videoUrl}
@@ -148,7 +148,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({
               src={video.videoUrl}
               poster={video.thumbnail}
               controls
-              autoPlay
+              preload="metadata"
               playsInline
               style={{ width: '100%', height: '100%', objectFit: 'contain' }}
             />

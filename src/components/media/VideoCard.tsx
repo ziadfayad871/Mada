@@ -25,7 +25,7 @@ export const VideoCard: React.FC<VideoCardProps> = ({ video, onClick }) => {
       className="video-card"
     >
       {/* Thumbnail Container */}
-      <div style={{ position: 'relative', aspectRatio: '16/9', overflow: 'hidden', backgroundColor: '#1E1610' }}>
+      <div style={{ position: 'relative', aspectRatio: '9/16', overflow: 'hidden', backgroundColor: '#1E1610' }}>
         {video.thumbnail ? (
           <img
             src={video.thumbnail}
@@ -74,20 +74,22 @@ export const VideoCard: React.FC<VideoCardProps> = ({ video, onClick }) => {
         >
           <div
             style={{
-              width: '46px',
-              height: '46px',
+              width: '52px',
+              height: '52px',
               borderRadius: '50%',
-              backgroundColor: 'rgba(251, 248, 243, 0.92)',
-              color: 'var(--text-primary)',
+              backgroundColor: 'rgba(196, 153, 59, 0.9)',
+              color: '#FFFFFF',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
-              transition: 'transform 0.25s ease'
+              boxShadow: '0 4px 20px rgba(196, 153, 59, 0.4)',
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(4px)',
+              border: '2px solid rgba(255,255,255,0.3)'
             }}
             className="play-badge"
           >
-            <Play size={20} style={{ marginLeft: '2px' }} fill="currentColor" />
+            <Play size={22} style={{ marginLeft: '3px' }} fill="currentColor" />
           </div>
         </div>
 
