@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowUpLeft, BarChart3, Camera, ChevronLeft, ChevronRight, Clapperboard, Lightbulb, Palette, Play, Send, Share2, TrendingUp } from 'lucide-react';
 import { BRANDS } from '../data/brands';
+import { VIDEOS } from '../data/videos';
 import { BrandLogoImage } from '../components/brand/BrandLogoImage';
 
 const services = [['التسويق الرقمي', TrendingUp], ['إدارة السوشيال ميديا', Share2], ['التصميم الإبداعي', Palette], ['إنتاج الفيديوهات', Clapperboard], ['تصوير فوتوغرافي', Camera], ['صناعة المحتوى', Lightbulb]] as const;
@@ -41,18 +42,138 @@ export const HomePage: React.FC = () => {
           <h2>بعض من عملائنا</h2>
           <p>شركات وعلامات تجارية وثقتمونا</p>
         </div>
-        <div className="mini-brand-grid">
-          {BRANDS.slice(0,5).map((brand,i)=>(
-            <Link 
-              to={`/brands/${brand.slug}`} 
-              key={brand.id} 
-              className={i===0?'mini-brand featured':'mini-brand'}
-            >
-              <BrandLogoImage brandId={brand.id} name={brand.name} size={40} />
-            </Link>
-          ))}
-          <Link to="/brands" className="mini-brand">
-            <b>+</b><small>and more...</small>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          gap: '1rem',
+          width: '100%'
+        }}>
+          {BRANDS.slice(0, 5).map((brand) => {
+            const brandVideo = VIDEOS.find(v => v.brandId === brand.id);
+            return (
+              <Link
+                to={`/brands/${brand.slug}`}
+                key={brand.id}
+                style={{
+                  borderRadius: 'var(--radius-lg)',
+                  overflow: 'hidden',
+                  border: '1px solid var(--border-color)',
+                  backgroundColor: 'var(--bg-card)',
+                  textDecoration: 'none',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <div style={{ position: 'relative', aspectRatio: '16/9', overflow: 'hidden' }}>
+                  {brandVideo ? (
+                    <div style={{
+                      width: '100%',
+                      height: '100%',
+                      background: `linear-gradient(135deg, #2a1f15 0%, #1a1410 100%)`,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}>
+                      <BrandLogoImage brandId={brand.id} name={brand.name} size={60} color="#C4993B" />
+                    </div>
+                  ) : (
+                    <div style={{
+                      width: '100%',
+                      height: '100%',
+                      background: 'linear-gradient(135deg, #2a1f15 0%, #1a1410 100%)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}>
+                      <BrandLogoImage brandId={brand.id} name={brand.name} size={60} color="#C4993B" />
+                    </div>
+                  )}
+
+                  {/* Dark overlay */}
+                  <div style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 50%)'
+                  }} />
+
+                  {/* Play button */}
+                  <div style={{
+                    position: 'absolute',
+                    inset: 0,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                    <div style={{
+                      width: '44px',
+                      height: '44px',
+                      borderRadius: '50%',
+                      backgroundColor: 'rgba(255,255,255,0.9)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      boxShadow: '0 4px 15px rgba(0,0,0,0.3)'
+                    }}>
+                      <Play size={18} style={{ marginLeft: '2px' }} fill="var(--text-primary)" color="var(--text-primary)" />
+                    </div>
+                  </div>
+
+                  {/* Duration badge */}
+                  {brandVideo?.duration && (
+                    <div style={{
+                      position: 'absolute',
+                      top: '8px',
+                      left: '8px',
+                      padding: '2px 8px',
+                      borderRadius: '4px',
+                      backgroundColor: 'rgba(0,0,0,0.7)',
+                      color: '#fff',
+                      fontSize: '0.72rem',
+                      fontWeight: 600
+                    }}>
+                      {brandVideo.duration}
+                    </div>
+                  )}
+
+                  {/* Brand logo overlay */}
+                  <div style={{
+                    position: 'absolute',
+                    top: '8px',
+                    right: '8px',
+                    opacity: 0.8
+                  }}>
+                    <BrandLogoImage brandId={brand.id} name={brand.name} size={28} color="#FFFFFF" />
+                  </div>
+                </div>
+
+                <div style={{ padding: '0.75rem', textAlign: 'center' }}>
+                  <div style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+                    {brand.name}
+                  </div>
+                  <div style={{ fontSize: '0.72rem', fontWeight: 600, color: 'var(--text-muted)', marginTop: '0.15rem', letterSpacing: '0.05em' }}>
+                    {brand.englishName}
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+          <Link
+            to="/brands"
+            style={{
+              borderRadius: 'var(--radius-lg)',
+              overflow: 'hidden',
+              border: '1px solid var(--border-color)',
+              backgroundColor: 'var(--bg-card)',
+              textDecoration: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              aspectRatio: '16/9',
+              transition: 'all 0.3s ease'
+            }}
+          >
+            <div style={{ textAlign: 'center', color: 'var(--text-muted)' }}>
+              <div style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.25rem' }}>...and more+</div>
+            </div>
           </Link>
         </div>
         <Link to="/brands" className="text-link">
