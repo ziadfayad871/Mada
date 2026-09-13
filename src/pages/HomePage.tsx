@@ -8,12 +8,6 @@ import { BrandLogoImage } from '../components/brand/BrandLogoImage';
 const services = [['التسويق الرقمي', TrendingUp], ['إدارة السوشيال ميديا', Share2], ['التصميم الإبداعي', Palette], ['إنتاج الفيديوهات', Clapperboard], ['تصوير فوتوغرافي', Camera], ['صناعة المحتوى', Lightbulb]] as const;
 
 const photos = [
-  '/assets/camera.jpg',
-  '/assets/camera.jpg',
-  '/assets/camera.jpg',
-  '/assets/camera.jpg',
-  '/assets/camera.jpg',
-  '/assets/camera.jpg',
   '/assets/camera.jpg'
 ];
 
@@ -231,34 +225,34 @@ export const HomePage: React.FC = () => {
       </div>
       <div className="work-layout">
         <div className="work-main">
-          <img src={photos[active]} alt="من أعمال مدى"/>
+          <BrandLogoImage brandId={BRANDS[active].id} name={BRANDS[active].name} size={120} />
         </div>
         <div className="work-text">
           <span className="eyebrow">مشروع مختار</span>
           <h3><BrandLogoImage brandId={BRANDS[active].id} name={BRANDS[active].name} size={50} /></h3>
           <p>حملة متكاملة من الهوية البصرية حتى صناعة المحتوى والإنتاج المرئي، أُعدت لتظهر العلامة بصورتها الأقوى وتحقق أهدافها التسويقية.</p>
-          <Link to="/works" className="text-link">
+          <Link to={`/brands/${BRANDS[active].slug}`} className="text-link">
             شاهد المشروع <ArrowLeft size={17}/>
           </Link>
         </div>
       </div>
       <div className="thumb-row">
-        {photos.map((photo,i)=>(
+        {BRANDS.map((brand,i)=>(
           <button 
             onClick={()=>setActive(i)} 
             className={active===i?'thumb active':'thumb'} 
-            key={photo}
+            key={brand.id}
           >
-            <img src={photo} alt=""/>
+            <BrandLogoImage brandId={brand.id} name={brand.name} size={40} />
           </button>
         ))}
       </div>
       <div className="slider-controls">
-        <button onClick={()=>setActive((active+6)%7)}>
+        <button onClick={()=>setActive((active + BRANDS.length - 1) % BRANDS.length)}>
           <ChevronRight/>
         </button>
-        <span>{active+1} / 7</span>
-        <button onClick={()=>setActive((active+1)%7)}>
+        <span>{active+1} / {BRANDS.length}</span>
+        <button onClick={()=>setActive((active+1) % BRANDS.length)}>
           <ChevronLeft/>
         </button>
       </div>
