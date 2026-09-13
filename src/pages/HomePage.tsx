@@ -224,8 +224,16 @@ export const HomePage: React.FC = () => {
         <h2>من أعمالنا</h2>
       </div>
       <div className="work-layout">
-        <div className="work-main">
-          <BrandLogoImage brandId={BRANDS[active].id} name={BRANDS[active].name} size={120} />
+        <div className="work-main" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
+          <img
+            src={`/assets/brands/${BRANDS[active].id}.jpeg`}
+            alt={BRANDS[active].name}
+            style={{
+              maxWidth: '100%',
+              maxHeight: '100%',
+              objectFit: 'contain'
+            }}
+          />
         </div>
         <div className="work-text">
           <span className="eyebrow">مشروع مختار</span>
