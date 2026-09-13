@@ -33,8 +33,10 @@ export const DevWatermark: React.FC = () => {
       title="تواصل معي عبر واتساب"
     >
       <MessageCircle size={14} color="#C4993B" />
-      <span style={{ color: '#C4993B', fontWeight: 700 }}>Dev/</span>
-      <span>Ziad Youssef</span>
+      <span style={{ direction: 'ltr', unicodeBidi: 'embed' }}>
+        <span style={{ color: '#C4993B', fontWeight: 700 }}>Dev/</span>
+        <span>Ziad Youssef</span>
+      </span>
       <span style={{
         width: '6px',
         height: '6px',
