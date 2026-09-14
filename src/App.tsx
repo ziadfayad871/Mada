@@ -11,7 +11,6 @@ import { BrandDetailPage } from './pages/BrandDetailPage';
 import { TeamPage } from './pages/TeamPage';
 import { ContactPage } from './pages/ContactPage';
 import { NotFoundPage } from './pages/NotFoundPage';
-import { DevWatermark } from './components/common/DevWatermark';
 
 // Helper component to scroll to top on navigation
 const ScrollToTop: React.FC = () => {
@@ -44,20 +43,7 @@ export function App() {
           </Routes>
         </main>
         <Footer />
-        <DevWatermark />
       </div>
-      <style>{`
-        @keyframes pulse-dot {
-          0%, 100% { opacity: 1; transform: scale(1); }
-          50% { opacity: 0.5; transform: scale(1.3); }
-        }
-        .dev-watermark:hover {
-          background-color: rgba(196, 153, 59, 0.15) !important;
-          border-color: rgba(196, 153, 59, 0.6) !important;
-          transform: translateY(-2px);
-          box-shadow: 0 6px 25px rgba(196, 153, 59, 0.25) !important;
-        }
-      `}</style>
     </Router>
   );
 }
