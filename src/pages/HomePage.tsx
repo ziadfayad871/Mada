@@ -224,27 +224,14 @@ export const HomePage: React.FC = () => {
         <h2>من أعمالنا</h2>
       </div>
       <div className="work-layout">
-        <div className="work-main" style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
+        <div className="work-main" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
           <img
             src="/assets/brands/mada-logo.jpg"
             alt="مدى"
             style={{
-              position: 'absolute',
-              width: '60%',
-              height: '60%',
-              objectFit: 'contain',
-              opacity: 0.15
-            }}
-          />
-          <img
-            src={`/assets/brands/${BRANDS[active].id}.jpeg`}
-            alt={BRANDS[active].name}
-            style={{
-              position: 'relative',
-              maxWidth: '70%',
-              maxHeight: '70%',
-              objectFit: 'contain',
-              zIndex: 1
+              maxWidth: '80%',
+              maxHeight: '80%',
+              objectFit: 'contain'
             }}
           />
         </div>
