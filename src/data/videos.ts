@@ -61,7 +61,7 @@ export const VIDEOS: VideoItem[] = [
     brandName: "لي سانتو",
     title: "لي سانتو - فيديو 1",
     thumbnail: "",
-    videoUrl: "https://youtube.com/shorts/LeVQ2N4AtFU",
+    videoUrl: "https://www.tiktok.com/@danaalajmi30/video/7685448566663302420",
     duration: "",
     category: "فيديو",
     description: "فيديو لي سانتو الأول"
@@ -72,7 +72,7 @@ export const VIDEOS: VideoItem[] = [
     brandName: "لي سانتو",
     title: "لي سانتو - فيديو 2",
     thumbnail: "",
-    videoUrl: "https://youtube.com/shorts/sYi5UyInv4E",
+    videoUrl: "https://www.tiktok.com/@danaalajmi30/video/7685448434941299989",
     duration: "",
     category: "فيديو",
     description: "فيديو لي سانتو الثاني"
@@ -83,7 +83,7 @@ export const VIDEOS: VideoItem[] = [
     brandName: "لي سانتو",
     title: "لي سانتو - فيديو 3",
     thumbnail: "",
-    videoUrl: "https://youtube.com/shorts/9tDv8a4pKRw",
+    videoUrl: "https://www.tiktok.com/@danaalajmi30/video/7685448278514715925",
     duration: "",
     category: "فيديو",
     description: "فيديو لي سانتو الثالث"
