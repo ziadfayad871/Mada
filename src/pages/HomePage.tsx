@@ -224,23 +224,33 @@ export const HomePage: React.FC = () => {
         <h2>من أعمالنا</h2>
       </div>
       <div className="work-layout">
-        <div className="work-main">
+        <div className="work-main" style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
+          <img
+            src="/assets/brands/mada-logo.jpg"
+            alt="مدى"
+            style={{
+              position: 'absolute',
+              width: '60%',
+              height: '60%',
+              objectFit: 'contain',
+              opacity: 0.15
+            }}
+          />
           <img
             src={`/assets/brands/${BRANDS[active].id}.jpeg`}
             alt={BRANDS[active].name}
             style={{
-              maxWidth: '100%',
-              maxHeight: '100%',
-              objectFit: 'contain'
+              position: 'relative',
+              maxWidth: '70%',
+              maxHeight: '70%',
+              objectFit: 'contain',
+              zIndex: 1
             }}
           />
         </div>
         <div className="work-text">
           <span className="eyebrow">مشروع مختار</span>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', margin: '14px 0' }}>
-            <img src="/assets/brands/mada-logo.jpg" alt="مدى" style={{ height: '45px', objectFit: 'contain' }} />
-            <BrandLogoImage brandId={BRANDS[active].id} name={BRANDS[active].name} size={50} />
-          </div>
+          <h3><BrandLogoImage brandId={BRANDS[active].id} name={BRANDS[active].name} size={50} /></h3>
           <p>حملة متكاملة من الهوية البصرية حتى صناعة المحتوى والإنتاج المرئي، أُعدت لتظهر العلامة بصورتها الأقوى وتحقق أهدافها التسويقية.</p>
           <Link to={`/brands/${BRANDS[active].slug}`} className="text-link">
             شاهد المشروع <ArrowLeft size={17}/>
