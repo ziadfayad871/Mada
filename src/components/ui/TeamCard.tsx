@@ -1,6 +1,5 @@
 import React from 'react';
 import { TeamMember } from '../../data/team';
-import { Phone } from 'lucide-react';
 
 interface TeamCardProps {
   member: TeamMember;
@@ -50,25 +49,6 @@ export const TeamCard: React.FC<TeamCardProps> = ({ member }) => {
           <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
             {member.bio}
           </p>
-        )}
-        {member.phone && (
-          <a
-            href={`https://wa.me/966${member.phone}`}
-            target="_blank"
-            rel="noreferrer"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              fontSize: '0.85rem',
-              fontWeight: 600,
-              color: 'var(--accent-gold)',
-              textDecoration: 'none'
-            }}
-          >
-            <Phone size={15} />
-            <span style={{ direction: 'ltr' }}>{member.phone}</span>
-          </a>
         )}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginTop: 'auto' }}>
           {member.specialties.map((spec, i) => (
