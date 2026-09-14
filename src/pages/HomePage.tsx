@@ -224,7 +224,7 @@ export const HomePage: React.FC = () => {
         <h2>من أعمالنا</h2>
       </div>
       <div className="work-layout">
-        <div className="work-main" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
+        <div className="work-main">
           <img
             src={`/assets/brands/${BRANDS[active].id}.jpeg`}
             alt={BRANDS[active].name}
