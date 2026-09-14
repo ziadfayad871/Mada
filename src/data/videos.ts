@@ -182,10 +182,32 @@ export const VIDEOS: VideoItem[] = [
     brandName: "مدى البراعم",
     title: "مدى البراعم - فيديو 1",
     thumbnail: "",
-    videoUrl: "https://www.youtube.com/shorts/KMpHbL5wH1Q",
+    videoUrl: "https://vt.tiktok.com/ZSqQPnCA2/",
     duration: "",
     category: "فيديو",
-    description: "فيديو مدى البراعم من يوتيوب"
+    description: "فيديو مدى البراعم الأول"
+  },
+  {
+    id: "mada-baram-02",
+    brandId: "mada-al-baram",
+    brandName: "مدى البراعم",
+    title: "مدى البراعم - فيديو 2",
+    thumbnail: "",
+    videoUrl: "https://vt.tiktok.com/ZSqQPK59s/",
+    duration: "",
+    category: "فيديو",
+    description: "فيديو مدى البراعم الثاني"
+  },
+  {
+    id: "mada-baram-03",
+    brandId: "mada-al-baram",
+    brandName: "مدى البراعم",
+    title: "مدى البراعم - فيديو 3",
+    thumbnail: "",
+    videoUrl: "https://vt.tiktok.com/ZSqQ5dL9K/",
+    duration: "",
+    category: "فيديو",
+    description: "فيديو مدى البراعم الثالث"
   },
   {
     id: "hematech-01",

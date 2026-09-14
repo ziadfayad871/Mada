@@ -142,6 +142,14 @@ export const VideoModal: React.FC<VideoModalProps> = ({
               allowFullScreen
               title={video.title}
             />
+          ) : video.videoUrl.includes('tiktok.com') ? (
+            <iframe
+              src={`https://www.tiktok.com/embed/v2/${video.videoUrl.split('/').pop()?.split('?')[0] || ''}`}
+              style={{ width: '100%', height: '100%', border: 'none' }}
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              title={video.title}
+            />
           ) : (
             <video
               ref={videoRef}

@@ -30,6 +30,10 @@ function isGoogleDriveUrl(url: string): boolean {
   return url.includes('drive.google.com');
 }
 
+function isTikTokUrl(url: string): boolean {
+  return url.includes('tiktok.com');
+}
+
 export const EditorialMediaFrame: React.FC<EditorialMediaFrameProps> = ({
   videos,
   brandName,
@@ -50,6 +54,7 @@ export const EditorialMediaFrame: React.FC<EditorialMediaFrameProps> = ({
   const currentVideo = videos[selectedIndex] || videos[0];
   const isYT = isYouTubeUrl(currentVideo.videoUrl);
   const isGDrive = isGoogleDriveUrl(currentVideo.videoUrl);
+  const isTikTok = isTikTokUrl(currentVideo.videoUrl);
 
   const handlePrev = () => {
     setIsPlaying(false);
@@ -90,6 +95,18 @@ export const EditorialMediaFrame: React.FC<EditorialMediaFrameProps> = ({
       return (
         <iframe
           src={currentVideo.videoUrl}
+          style={{ width: '100%', height: '100%', border: 'none' }}
+          allow="encrypted-media; picture-in-picture"
+          allowFullScreen
+          title={currentVideo.title}
+        />
+      );
+    }
+    if (isTikTokUrl(currentVideo.videoUrl)) {
+      const tiktokId = currentVideo.videoUrl.split('/').pop()?.split('?')[0] || '';
+      return (
+        <iframe
+          src={`https://www.tiktok.com/embed/v2/${tiktokId}`}
           style={{ width: '100%', height: '100%', border: 'none' }}
           allow="encrypted-media; picture-in-picture"
           allowFullScreen
@@ -158,7 +175,7 @@ export const EditorialMediaFrame: React.FC<EditorialMediaFrameProps> = ({
         {renderPlayer()}
 
         {/* Media Overlay Gradient */}
-        {!isYT && !isGDrive && (
+        {!isYT && !isGDrive && !isTikTok && (
           <>
             <div
               style={{
