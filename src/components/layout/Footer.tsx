@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MadaLogo } from '../common/MadaLogo';
-import { Instagram, Phone, Mail, MapPin } from 'lucide-react';
+import { Instagram, Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -73,6 +73,26 @@ export const Footer: React.FC = () => {
                 className="social-link"
               >
                 TikTok
+              </a>
+              <a
+                href="https://wa.me/966531134919"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="WhatsApp"
+                style={{
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '50%',
+                  backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: '#E8DFD5',
+                  transition: 'all 0.2s ease'
+                }}
+                className="social-link"
+              >
+                <MessageCircle size={19} />
               </a>
             </div>
           </div>
