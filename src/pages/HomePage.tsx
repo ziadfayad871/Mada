@@ -237,7 +237,10 @@ export const HomePage: React.FC = () => {
         </div>
         <div className="work-text">
           <span className="eyebrow">مشروع مختار</span>
-          <h3><BrandLogoImage brandId={BRANDS[active].id} name={BRANDS[active].name} size={50} /></h3>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', margin: '14px 0' }}>
+            <img src="/assets/brands/mada-logo.jpg" alt="مدى" style={{ height: '45px', objectFit: 'contain' }} />
+            <BrandLogoImage brandId={BRANDS[active].id} name={BRANDS[active].name} size={50} />
+          </div>
           <p>حملة متكاملة من الهوية البصرية حتى صناعة المحتوى والإنتاج المرئي، أُعدت لتظهر العلامة بصورتها الأقوى وتحقق أهدافها التسويقية.</p>
           <Link to={`/brands/${BRANDS[active].slug}`} className="text-link">
             شاهد المشروع <ArrowLeft size={17}/>
